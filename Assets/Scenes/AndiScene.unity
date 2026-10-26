@@ -414,7 +414,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
   grid: {fileID: 1658691121}
-  currentPackageData: {fileID: 11400000, guid: b71f8de3c3332714da296c4e65b51800, type: 2}
+  packageTypes:
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
+  - {fileID: 11400000, guid: b71f8de3c3332714da296c4e65b51800, type: 2}
+  - {fileID: 11400000, guid: 21c087f38f4970b4aaff50eae2ca1484, type: 2}
+  - {fileID: 11400000, guid: 43ef1800c7021a24aa4f3cbe4fd9151c, type: 2}
+  - {fileID: 11400000, guid: 9fe1147df2c331644b3e52f13878dd05, type: 2}
+  - {fileID: 11400000, guid: a2706f0782dca754e8b35d17ec9f968f, type: 2}
   puzzleMask:
     serializedVersion: 2
     m_Bits: 8
@@ -641,6 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleGrid
   CellSize: 1
   GridSize: 4
+  GridHeight: 2
 --- !u!1 &1720268482
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +785,7 @@ Transform:
   m_GameObject: {fileID: 2009256039}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 1.5}
+  m_LocalPosition: {x: 1.5, y: 1, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
