@@ -3,9 +3,9 @@ using UnityEngine;
 public class BalanceManager : MonoBehaviour
 {
     [SerializeField] private PuzzleGrid grid;
-    public float swingAmaount = 30f; // in degrees
+    public float swingAmaount = 2f; // in degrees
     public float balanceBias = 1f;
-    public float maxBalnceOffset = 30f;
+    public float maxBalnceOffset = 20f;
 
     public float xBalance;
     public float zBalance;
@@ -22,7 +22,7 @@ public class BalanceManager : MonoBehaviour
     void Update()
     {
         (xBalance, zBalance) = Checkbalance(grid.GridCells);
-        print("xbalance" + xBalance);
+        // print("xbalance" + xBalance);
         TiltPlatform(xBalance, zBalance);
     }
 
@@ -44,8 +44,8 @@ public class BalanceManager : MonoBehaviour
                 //if not empty get weight
                 float weight = gridCells[x, z].GetWeight();
                 //cal hebel
-                float xHebel = x - (xMiddle + 0.5f);
-                float yHebel = z - (zMiddle + 0.5f);
+                float xHebel = x - (xMiddle);
+                float yHebel = z - (zMiddle);
                 //add to sum
                 xSum += weight * xHebel;
                 zSum += weight * yHebel;
@@ -67,7 +67,7 @@ public class BalanceManager : MonoBehaviour
     void Initialize(GridCell[,] gridCells)
     {
         //calc center
-        xMiddle = gridCells.GetLength(0) / 2;
-        zMiddle = gridCells.GetLength(1) / 2;
+        xMiddle = (gridCells.GetLength(0) - 1) / 2f;
+        zMiddle = (gridCells.GetLength(1) - 1) / 2f;
     }
 }

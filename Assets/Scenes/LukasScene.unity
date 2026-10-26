@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   grid: {fileID: 1658691121}
-  swingAmaount: 30
+  swingAmaount: 4
   balanceBias: 1
   maxBalnceOffset: 30
   xBalance: 0
