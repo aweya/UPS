@@ -5,4 +5,5 @@ public class PackageData : ScriptableObject
 {
     public GridPackage gridPackage;
     public float weight;
+    public bool isStackable;
 }
