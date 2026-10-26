@@ -59,23 +59,40 @@
                 },
                 {
                     "name": "",
-                    "id": "b911e64b-0fb7-494e-b0ec-9db0a10fe722",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Rotate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c1504569-23fe-41e4-b6de-6f5676f3e401",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Camera",
+            "id": "88cefa7d-3ab9-48ec-b614-38d308a1808e",
+            "actions": [
+                {
+                    "name": "RotateCamera",
+                    "type": "Button",
+                    "id": "8baafe46-5858-4fd4-8c51-3526a1b024ea",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d8cd700b-c37e-4800-bcd4-b8565e540e4c",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

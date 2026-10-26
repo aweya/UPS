@@ -7,6 +7,7 @@ public class PuzzleGrid : MonoBehaviour
     public int GridSize = 3;
     public int GridHeight = 2;
     private GridCell[,] gridCells;
+    public GridCell[,] GridCells => gridCells;
 
     void Start()
     {

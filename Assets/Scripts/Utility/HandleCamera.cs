@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class HandleCamera : MonoBehaviour
 {
@@ -19,6 +21,10 @@ public class HandleCamera : MonoBehaviour
         }
 
         transform.rotation = endRotation;
+    }
 
+    void OnRotateCam(InputValue value)
+    {
+        RotateCamera();
     }
 }
