@@ -7,6 +7,7 @@ public class PuzzleGrid : MonoBehaviour
     public int GridSize = 3;
     public int GridHeight = 2;
     private GridCell[,] gridCells;
+    public GridCell[,] GridCells => gridCells;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class PuzzleGrid : MonoBehaviour
         {
             (int x, int y) = GetGridPosition(p.transform.position);
             gridCells[x, y].SetPackage(package, p);
+            Debug.Log("Cell: " + x + ", " + y + "; Weight: " + gridCells[x, y].GetWeight());
         }
     }
 
