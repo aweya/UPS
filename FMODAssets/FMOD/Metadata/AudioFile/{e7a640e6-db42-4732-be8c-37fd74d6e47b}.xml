@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{e7a640e6-db42-4732-be8c-37fd74d6e47b}">
+		<property name="assetPath">
+			<value>VOXFutz_speaker announcement bellevue tram zurich_TAL_Paris Baumann_Dodotronic.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.7592291666666666</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fd7ad3a9-fd5b-4ee6-81c2-1b329a053873}</destination>
+		</relationship>
+	</object>
+</objects>
