@@ -6,18 +6,28 @@ public class GridPackage : MonoBehaviour
 {
     private List<PlacementPoint> placementPoints;
     private float weight;
+    private bool stackable;
+    public float Weight => weight;
+    public bool Stackable => stackable;
 
     void Start()
     {
-        placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
+        //placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
     }
 
     public void Initialize(PackageData data)
     {
+        placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
         weight = data.weight;
+        stackable = data.isStackable;
     }
 
-    public List<Vector3> AllPlacementPoints()
+    public List<PlacementPoint> AllPlacementPoints()
+    {
+        return placementPoints;
+    }
+
+    public List<Vector3> PlacementPointCoordinates()
     {
         List<Vector3> allPoints = new List<Vector3>();
         foreach (PlacementPoint p in placementPoints)

@@ -5,6 +5,7 @@ public class PuzzleGrid : MonoBehaviour
 {
     public float CellSize = 1f;
     public int GridSize = 3;
+    public int GridHeight = 2;
     private GridCell[,] gridCells;
 
     void Start()
@@ -15,35 +16,53 @@ public class PuzzleGrid : MonoBehaviour
             for (int y = 0; y < gridCells.GetLength(1); y++)
             {
                 gridCells[x, y] = new();
+                gridCells[x, y].Initialize(GridHeight, CellState.EMPTY);
             }
         }
     }
 
-    public void PlacePackage(GridPackage package, List<Vector3> placementPoints)
+    public void PlacePackage(GridPackage package, List<PlacementPoint> placementPoints)
     {
         foreach (var p in placementPoints)
         {
-            (int x, int y) = GetGridPosition(p);
-            gridCells[x, y].SetPackage(package);
+            (int x, int y) = GetGridPosition(p.transform.position);
+            gridCells[x, y].SetPackage(package, p);
         }
     }
 
-    public bool CanPlacePackage(List<Vector3> placementPoints)
+    public CellState PlacementState(List<Vector3> placementPoints)
     {
+        int stackableCells = 0;
         foreach (var p in placementPoints)
         {
             (int x, int y) = GetGridPosition(p);
             if (x < 0 || x >= GridSize || y < 0 || y >= GridSize)
             {
-                return false;
+                return CellState.FULL;
             }
 
-            if (!gridCells[x, y].IsEmpty())
+            if (gridCells[x, y].GetState() == CellState.FULL)
             {
-                return false;
+                return CellState.FULL;
+            }
+            else if (gridCells[x, y].GetState() == CellState.STACKABLE)
+            {
+                stackableCells++;
             }
         }
-        return true;
+
+        if (stackableCells == 0)
+        {
+            return CellState.EMPTY;
+        }
+        else if (stackableCells == placementPoints.Count)
+        {
+            return CellState.STACKABLE;
+        }
+        else
+        {
+            return CellState.FULL;
+        }
     }
 
     private (int x, int y) GetGridPosition(Vector3 worldPos)

@@ -1,17 +1,44 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridCell
 {
-    private GridPackage package;
+    private int maxHeight;
+    private List<GridPackage> packages = new List<GridPackage>();
+    private CellState cellState;
 
-    public void SetPackage(GridPackage newPackage)
+    public void Initialize(int height, CellState startState)
     {
-        package = newPackage;
+        maxHeight = height;
+        cellState = startState;
     }
 
-    public bool IsEmpty()
+    public void SetPackage(GridPackage newPackage, PlacementPoint point)
     {
-        return package == null;
+        for (int i = 0; i < point.Height; i++)
+        {
+            packages.Add(newPackage);
+        }
+        if (newPackage.Stackable && packages.Count < maxHeight)
+        {
+            cellState = CellState.STACKABLE;
+        }
+        else
+        {
+            cellState = CellState.FULL;
+        }
     }
+
+    public CellState GetState()
+    {
+        return cellState;
+    }
+}
+
+public enum CellState
+{
+    EMPTY,
+    STACKABLE,
+    FULL
 }
