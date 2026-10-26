@@ -414,7 +414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
   grid: {fileID: 1658691121}
-  currentPackageData: {fileID: 11400000, guid: 21c087f38f4970b4aaff50eae2ca1484, type: 2}
+  currentPackageData: {fileID: 11400000, guid: b71f8de3c3332714da296c4e65b51800, type: 2}
   puzzleMask:
     serializedVersion: 2
     m_Bits: 8
