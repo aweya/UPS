@@ -10,6 +10,10 @@ public class BalanceManager : MonoBehaviour
     public float xBalance;
     public float zBalance;
 
+    public Vector2 balance;
+
+    public float totalBalance;
+
     private float xMiddle;
     private float zMiddle;
 
@@ -24,6 +28,8 @@ public class BalanceManager : MonoBehaviour
     {
         (xBalance, zBalance) = Checkbalance(grid.GridCells);
         // print("xbalance" + xBalance);
+        balance = new Vector2(xBalance, zBalance);
+        totalBalance = balance.magnitude;
         TiltPlatform(xBalance, zBalance);
     }
 
