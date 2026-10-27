@@ -34,6 +34,16 @@ public class GridCell
     {
         return cellState;
     }
+
+    public float GetWeight()
+    {
+        float totalWeight = 0;
+        foreach (var p in packages)
+        {
+            totalWeight += p.Weight;
+        }
+        return totalWeight;
+    }
 }
 
 public enum CellState

@@ -1,24 +1,34 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
 
 public class HandleCamera : MonoBehaviour
 {
     [SerializeField] private float rotationAmount;
     [SerializeField] private float rotationDuration;
-    private IEnumerator RotateCamera()
+    private bool rotating = false;
+    private IEnumerator RotateCamera(Vector3 angle)
     {
-        float time = 0;
+        rotating = true;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(startRotation.x, startRotation.y + rotationAmount, startRotation.z);
+        Quaternion endRotation = Quaternion.Euler(transform.eulerAngles + angle);
 
-        while (time < rotationDuration)
+        for (var t = 0f; t <= 1; t += Time.deltaTime / rotationDuration)
         {
-            transform.rotation = Quaternion.Slerp(startRotation, endRotation, time / rotationDuration);
-            time += Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
             yield return null;
         }
 
         transform.rotation = endRotation;
+        rotating = false;
+    }
 
+    void OnRotateCamera(InputValue value)
+    {
+        if (!rotating)
+        {
+            StartCoroutine(RotateCamera(Vector3.up * rotationAmount));
+        }
     }
 }

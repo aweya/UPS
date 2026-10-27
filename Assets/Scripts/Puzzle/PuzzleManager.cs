@@ -68,6 +68,7 @@ public class PuzzleManager : MonoBehaviour
             }
             grid.PlacePackage(activePackage, activePackage.AllPlacementPoints());
             Instantiate(activePackage.gameObject, GetGridSnapPosition(allPlacementPoints, height), activePackage.transform.rotation);
+            Destroy(activePackage.gameObject);
             activePackage = null;
             SelectPackage(packageTypes[currentPackageType]);
         }
@@ -110,7 +111,7 @@ public class PuzzleManager : MonoBehaviour
 
     void OnSwitch(InputValue value)
     {
-        if (currentPackageType < packageTypes.Count())
+        if (currentPackageType < packageTypes.Count() - 1)
         {
             currentPackageType++;
         }
