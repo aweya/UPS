@@ -8,17 +8,15 @@ public class HandleCamera : MonoBehaviour
     [SerializeField] private float rotationAmount;
     [SerializeField] private float rotationDuration;
     private bool rotating = false;
-    private IEnumerator RotateCamera()
+    private IEnumerator RotateCamera(Vector3 angle)
     {
         rotating = true;
-        float time = 0;
         Quaternion startRotation = transform.rotation;
-        Quaternion endRotation = Quaternion.Euler(startRotation.x, startRotation.y + rotationAmount, startRotation.z);
+        Quaternion endRotation = Quaternion.Euler(transform.eulerAngles + angle);
 
-        while (time < rotationDuration)
+        for (var t = 0f; t <= 1; t += Time.deltaTime / rotationDuration)
         {
-            transform.rotation = Quaternion.Slerp(startRotation, endRotation, time / rotationDuration);
-            time += Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(startRotation, endRotation, t);
             yield return null;
         }
 
@@ -30,7 +28,7 @@ public class HandleCamera : MonoBehaviour
     {
         if (!rotating)
         {
-            StartCoroutine(RotateCamera());
+            StartCoroutine(RotateCamera(Vector3.up * rotationAmount));
         }
     }
 }

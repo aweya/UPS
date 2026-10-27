@@ -9,9 +9,13 @@ public class PuzzleGrid : MonoBehaviour
     private GridCell[,] gridCells;
     public GridCell[,] GridCells => gridCells;
 
-    void Start()
+    private void Awake()
     {
         gridCells = new GridCell[GridSize, GridSize];
+    }
+
+    void Start()
+    {
         for (int x = 0; x < gridCells.GetLength(0); x++)
         {
             for (int y = 0; y < gridCells.GetLength(1); y++)

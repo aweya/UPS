@@ -1,6 +1,6 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class OrderManager : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class OrderManager : MonoBehaviour
     public class OrderInfos
     {
         public Sprite Icon;
-        [TextArea(3,8)] public String Text;
+        [TextArea(3, 8)] public String Text;
     }
 
     [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
@@ -32,7 +32,7 @@ public class OrderManager : MonoBehaviour
         foreach (var order in orders)
         {
             var newOrder = Instantiate(orderPrefab, container);
-            newOrder.Setup(order.Icon, order.Text);
+            //newOrder.Setup(order.Icon, order.Text);
         }
     }
 
@@ -41,6 +41,6 @@ public class OrderManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
