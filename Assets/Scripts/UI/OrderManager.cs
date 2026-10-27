@@ -11,8 +11,11 @@ public class OrderManager : MonoBehaviour
     [Serializable]
     public class OrderInfos
     {
-        public Sprite Icon;
+        //public Sprite Icon;
+
+        public Sprite[] Icons;
         [TextArea(3, 8)] public String Text;
+        //public Sprite Background;
     }
     [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
 
@@ -34,14 +37,7 @@ public class OrderManager : MonoBehaviour
         foreach(var order in orders)
         {
             var newOrder = Instantiate(orderPrefab, container);
-            newOrder.Setup(order.Icon, order.Text);
+            newOrder.Setup(order.Icons[0], order.Text, order.Icons[1]);
         }
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

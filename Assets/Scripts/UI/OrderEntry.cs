@@ -7,6 +7,7 @@ public class OrderEntry : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text textField;
+    [SerializeField] private Image background;
 
     private void Reset()
     {
@@ -14,21 +15,10 @@ public class OrderEntry : MonoBehaviour
     
     }
 
-    public void Setup(Sprite icon, string text)
+    public void Setup(Sprite icon, string text, Sprite background)
     {
         image.sprite = icon;
         textField.SetText(text);  
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        image.sprite = background;
     }
 }

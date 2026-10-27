@@ -1,13 +1,17 @@
+using TMPro;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private CountdownTimer countdownTimer;
+    public TextMeshProUGUI moneyText;
     public GameObject pauseScreen;
     public GameObject creditsScreen;
     public GameObject mainMenu;
     public GameObject gameScreen;
     public GameObject tutorialScreen;
+
+    public int currentMoney;
 
     private bool firstGameStart = true;
     
@@ -20,7 +24,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        moneyText.text = currentMoney.ToString();
     }
 
     public void EnterPauseMenu()
