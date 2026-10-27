@@ -21,4 +21,9 @@ public class OrderEntry : MonoBehaviour
         textField.SetText(text);  
         image.sprite = background;
     }
+
+    public void TopSetup(Sprite background)
+    { 
+        image.sprite = background;
+    }
 }
