@@ -1,10 +1,11 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 
 public class OrderManager : MonoBehaviour
 {
-    //[SerializeField] private OrderEntry orderPrefab;
+    [SerializeField] private OrderEntry orderPrefab;
     [SerializeField] private Transform container;
 
     [Serializable]
@@ -13,8 +14,8 @@ public class OrderManager : MonoBehaviour
         public Sprite Icon;
         [TextArea(3, 8)] public String Text;
     }
+    [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
 
-    // [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,25 +23,25 @@ public class OrderManager : MonoBehaviour
         CreateOrders();
     }
 
-    [ContextMenu("CreateOrders")]
+    [ContextMenu("CreateEntries")]
+  
     private void CreateOrders()
     {
-        foreach (Transform child in container)
+        foreach(Transform child in container)
         {
             Destroy(child.gameObject);
         }
-        //foreach (var order in orders)
+        foreach(var order in orders)
         {
-            //var newOrder = Instantiate(orderPrefab, container);
-            //newOrder.Setup(order.Icon, order.Text);
+            var newOrder = Instantiate(orderPrefab, container);
+            newOrder.Setup(order.Icon, order.Text);
         }
     }
-
 
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
