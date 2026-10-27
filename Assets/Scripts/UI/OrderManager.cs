@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class OrderManager : MonoBehaviour
 {
-    [SerializeField] private OrderEntry orderPrefab;
+    //[SerializeField] private OrderEntry orderPrefab;
     [SerializeField] private Transform container;
 
     [Serializable]
@@ -14,7 +14,7 @@ public class OrderManager : MonoBehaviour
         [TextArea(3, 8)] public String Text;
     }
 
-    [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
+    // [SerializeField] private List<OrderInfos> orders = new List<OrderInfos>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,9 +29,9 @@ public class OrderManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        foreach (var order in orders)
+        //foreach (var order in orders)
         {
-            var newOrder = Instantiate(orderPrefab, container);
+            //var newOrder = Instantiate(orderPrefab, container);
             //newOrder.Setup(order.Icon, order.Text);
         }
     }
