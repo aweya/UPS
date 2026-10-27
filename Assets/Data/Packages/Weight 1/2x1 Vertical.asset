@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
-  m_Name: Package6
+  m_Name: 2x1 Vertical
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -6360507600894162542, guid: 9898652283b8800429ab4103ca6fe064, type: 3}
-  weight: 2
+  gridPackage: {fileID: -6360507600894162542, guid: e05288ea5d19d384a92643ca3fb2ea65, type: 3}
+  weight: 1
   isStackable: 0

@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class GridPackage : MonoBehaviour
 {
+    private PackageData pData;
     private List<PlacementPoint> placementPoints;
     private float weight;
     private bool stackable;
     public float Weight => weight;
     public bool Stackable => stackable;
-
-    void Start()
-    {
-        //placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
-    }
+    public PackageData Data => pData;
 
     public void Initialize(PackageData data)
     {
         placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
+        pData = data;
         weight = data.weight;
         stackable = data.isStackable;
     }
@@ -35,6 +33,11 @@ public class GridPackage : MonoBehaviour
             allPoints.Add(p.gameObject.transform.position);
         }
         return allPoints;
+    }
+
+    public int GetHeight()
+    {
+        return 0;
     }
 
     public void MovePackage(Vector3 position)

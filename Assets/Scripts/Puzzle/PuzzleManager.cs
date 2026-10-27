@@ -57,31 +57,49 @@ public class PuzzleManager : MonoBehaviour
     private void PlacePackage()
     {
         Debug.Log("Package placed");
-        if (activePackage != null)
+        List<Vector3> allPlacementPoints = activePackage.PlacementPointCoordinates();
+        if (grid.PlacementState(allPlacementPoints) == CellState.FULL)
         {
-            List<Vector3> allPlacementPoints = activePackage.PlacementPointCoordinates();
-            if (grid.PlacementState(allPlacementPoints) == CellState.FULL)
-            {
-                Debug.Log("Cell full");
-                return;
-            }
-            float height = 0;
-            if (grid.PlacementState(allPlacementPoints) == CellState.EMPTY)
-            {
-                height = 0;
-            }
-            else if (grid.PlacementState(allPlacementPoints) == CellState.STACKABLE)
-            {
-                height = 1;
-            }
-            grid.PlacePackage(activePackage, activePackage.AllPlacementPoints());
-            Vector3 placedRotation = new Vector3(0, activePackage.transform.localEulerAngles.y, 0);
-            var placedPackage = Instantiate(activePackage.gameObject, Vector3.zero, Quaternion.identity, grid.transform);
-            placedPackage.transform.localPosition = GetGridSnapPosition(allPlacementPoints, height);
-            placedPackage.transform.localRotation = Quaternion.Euler(placedRotation);
-            Destroy(activePackage.gameObject);
-            activePackage = null;
+            Debug.Log("Cell full");
+            return;
+        }
+        float height = 0;
+        if (grid.PlacementState(allPlacementPoints) == CellState.EMPTY)
+        {
+            height = 0;
+        }
+        else if (grid.PlacementState(allPlacementPoints) == CellState.STACKABLE)
+        {
+            height = 1;
+        }
+
+        Vector3 placedRotation = new Vector3(0, activePackage.transform.localEulerAngles.y, 0);
+        GridPackage placedPackage = Instantiate(activePackage.gameObject, Vector3.zero, Quaternion.identity, grid.transform).GetComponent<GridPackage>();
+        placedPackage.transform.localPosition = GetGridSnapPosition(allPlacementPoints, height);
+        placedPackage.transform.localRotation = Quaternion.Euler(placedRotation);
+        placedPackage.Initialize(activePackage.Data);
+
+        grid.PlacePackage(placedPackage, placedPackage.AllPlacementPoints());
+
+        Destroy(activePackage.gameObject);
+        activePackage = null;
+        if (currentPackageType < packageTypes.Count() - 1)
+        {
             SelectPackage(packageTypes[currentPackageType]);
+        }
+    }
+
+    private void TryPickUpPackage()
+    {
+        int x = grid.GetGridPosition(GetMousePosition()).x;
+        int y = grid.GetGridPosition(GetMousePosition()).y;
+        Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
+        if (grid.GridCells[x, y].GetState() != CellState.EMPTY)
+        {
+            GridPackage package = grid.GridCells[x, y].GetTopPackage();
+            SelectPackage(package.Data);
+            grid.RemovePackage(package.AllPlacementPoints());
+            Destroy(package.gameObject);
         }
     }
 
@@ -107,8 +125,16 @@ public class PuzzleManager : MonoBehaviour
 
     void OnInteract(InputValue value)
     {
-        Debug.Log("Placed");
-        PlacePackage();
+        if (activePackage != null)
+        {
+            Debug.Log("Placed");
+            PlacePackage();
+        }
+        else
+        {
+            TryPickUpPackage();
+        }
+
     }
 
     void OnRotate(InputValue value)
@@ -125,12 +151,18 @@ public class PuzzleManager : MonoBehaviour
         if (currentPackageType < packageTypes.Count() - 1)
         {
             currentPackageType++;
+            SelectPackage(packageTypes[currentPackageType]);
+        }
+        else if (currentPackageType == packageTypes.Count() - 1)
+        {
+            currentPackageType++;
+            Destroy(activePackage.gameObject);
+            activePackage = null;
         }
         else
         {
             currentPackageType = 0;
+            SelectPackage(packageTypes[currentPackageType]);
         }
-
-        SelectPackage(packageTypes[currentPackageType]);
     }
 }

@@ -30,20 +30,20 @@ public class TicketManager : MonoBehaviour
     }
 
     [ContextMenu("CreateEntries")]
-  
+
     private void CreateOrders()
     {
-        foreach(Transform child in container)
+        foreach (Transform child in container)
         {
             Destroy(child.gameObject);
         }
-        foreach(var order in orders)
+        foreach (var order in orders)
         {
             if (order.TicketType == 0)
             {
                 var newOrder = Instantiate(topPrefab, container);
                 newOrder.TopSetup(order.Icons[0]);
-            }  
+            }
             else if (order.TicketType == 2)
             {
                 var newOrder = Instantiate(bottomPrefab, container);
@@ -54,7 +54,7 @@ public class TicketManager : MonoBehaviour
                 var newOrder = Instantiate(orderPrefab, container);
                 newOrder.Setup(order.Icons[0], order.Text, order.Icons[1]);
             }
-            
+
         }
     }
 }

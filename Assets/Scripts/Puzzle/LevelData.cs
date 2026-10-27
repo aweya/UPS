@@ -6,7 +6,7 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public int tier;
-    public GridPalette palette;
+    public PuzzleGrid palette;
     public List<PackageData> levelPackages;
     public float maxWinDeviation;
 }

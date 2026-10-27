@@ -738,7 +738,7 @@ Transform:
   m_GameObject: {fileID: 2077731726}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 1.5}
+  m_LocalPosition: {x: 2, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -918,6 +918,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
+      propertyPath: packageTypes.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
+      propertyPath: 'packageTypes.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 57e9b5820906b954689d2526de0c87c0, type: 2}
+    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
+      propertyPath: 'packageTypes.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 533ba36018c669445bf16ffdb94e6a8a, type: 2}
+    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
+      propertyPath: 'packageTypes.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 21c087f38f4970b4aaff50eae2ca1484, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

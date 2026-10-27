@@ -36,6 +36,17 @@ public class PuzzleGrid : MonoBehaviour
         }
     }
 
+
+    public void RemovePackage(List<PlacementPoint> placementPoints)
+    {
+        foreach (var p in placementPoints)
+        {
+            (int x, int y) = GetGridPosition(p.transform.position);
+            gridCells[x, y].RemovePackage();
+            Debug.Log("Cell: " + x + ", " + y + "; Weight: " + gridCells[x, y].GetWeight());
+        }
+    }
+
     public CellState PlacementState(List<Vector3> placementPoints)
     {
         int stackableCells = 0;
@@ -71,7 +82,7 @@ public class PuzzleGrid : MonoBehaviour
         }
     }
 
-    private (int x, int y) GetGridPosition(Vector3 worldPos)
+    public (int x, int y) GetGridPosition(Vector3 worldPos)
     {
         int x = Mathf.FloorToInt((worldPos - transform.position).x / CellSize);
         int y = Mathf.FloorToInt((worldPos - transform.position).z / CellSize);

@@ -30,9 +30,40 @@ public class GridCell
         }
     }
 
+    public void RemovePackage()
+    {
+        if (packages.Count > 1)
+        {
+            cellState = CellState.STACKABLE;
+            if (packages[0] == packages[1])
+            {
+                packages.Clear();
+            }
+            else
+            {
+                packages.RemoveAt(packages.Count - 1);
+            }
+        }
+        else if (packages.Count > 0)
+        {
+            cellState = CellState.STACKABLE;
+            packages.RemoveAt(packages.Count - 1);
+        }
+
+        if (packages.Count == 0)
+        {
+            cellState = CellState.EMPTY;
+        }
+    }
+
     public CellState GetState()
     {
         return cellState;
+    }
+
+    public GridPackage GetTopPackage()
+    {
+        return packages[packages.Count - 1];
     }
 
     public float GetWeight()

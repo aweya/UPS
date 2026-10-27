@@ -11,19 +11,18 @@ public class OrderEntry : MonoBehaviour
 
     private void Reset()
     {
-      //  textField = GetComponentInChildren<TMP_Text>();
-    
+        //  textField = GetComponentInChildren<TMP_Text>();
     }
 
     public void Setup(Sprite icon, string text, Sprite background)
     {
         image.sprite = icon;
-        textField.SetText(text);  
+        textField.SetText(text);
         image.sprite = background;
     }
 
     public void TopSetup(Sprite background)
-    { 
+    {
         image.sprite = background;
     }
 }
