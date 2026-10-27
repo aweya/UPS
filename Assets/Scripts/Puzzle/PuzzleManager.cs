@@ -10,6 +10,7 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private PackageData[] packageTypes;
     [SerializeField] private LayerMask puzzleMask;
     [SerializeField] private GameObject test;
+    [SerializeField] private BalanceManager balanceManager;
     private GridPackage activePackage;
     private PlayerInput playerInput;
     private int currentPackageType = 0;
@@ -30,6 +31,7 @@ public class PuzzleManager : MonoBehaviour
 
     private void HandlePreview()
     {
+        Vector3 rotation = new Vector3(balanceManager.GetCurrentTilt().x, activePackage.transform.localEulerAngles.y, balanceManager.GetCurrentTilt().z);
         activePackage.MovePackage(GetMousePosition());
         if (grid.PlacementState(activePackage.PlacementPointCoordinates()) == CellState.EMPTY)
         {
@@ -47,7 +49,8 @@ public class PuzzleManager : MonoBehaviour
         {
             Destroy(activePackage.gameObject);
         }
-        activePackage = Instantiate(data.gridPackage.gameObject, GetMousePosition(), Quaternion.identity).GetComponent<GridPackage>();
+        activePackage = Instantiate(data.gridPackage.gameObject, GetMousePosition(), Quaternion.identity, grid.transform).GetComponent<GridPackage>();
+        activePackage.transform.localRotation = Quaternion.Euler(Vector3.zero);
         activePackage.Initialize(data);
     }
 
@@ -57,6 +60,11 @@ public class PuzzleManager : MonoBehaviour
         if (activePackage != null)
         {
             List<Vector3> allPlacementPoints = activePackage.PlacementPointCoordinates();
+            if (grid.PlacementState(allPlacementPoints) == CellState.FULL)
+            {
+                Debug.Log("Cell full");
+                return;
+            }
             float height = 0;
             if (grid.PlacementState(allPlacementPoints) == CellState.EMPTY)
             {
@@ -67,7 +75,10 @@ public class PuzzleManager : MonoBehaviour
                 height = 1;
             }
             grid.PlacePackage(activePackage, activePackage.AllPlacementPoints());
-            Instantiate(activePackage.gameObject, GetGridSnapPosition(allPlacementPoints, height), activePackage.transform.rotation);
+            Vector3 placedRotation = new Vector3(0, activePackage.transform.localEulerAngles.y, 0);
+            var placedPackage = Instantiate(activePackage.gameObject, Vector3.zero, Quaternion.identity, grid.transform);
+            placedPackage.transform.localPosition = GetGridSnapPosition(allPlacementPoints, height);
+            placedPackage.transform.localRotation = Quaternion.Euler(placedRotation);
             Destroy(activePackage.gameObject);
             activePackage = null;
             SelectPackage(packageTypes[currentPackageType]);
@@ -77,7 +88,7 @@ public class PuzzleManager : MonoBehaviour
     private Vector3 GetMousePosition()
     {
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-        Plane ground = new(Vector3.up, Vector3.zero);
+        Plane ground = new(grid.transform.up, Vector3.zero);
         if (ground.Raycast(ray, out float dist))
         {
             return ray.GetPoint(dist);
@@ -105,7 +116,7 @@ public class PuzzleManager : MonoBehaviour
         Debug.Log("Rotated");
         if (activePackage != null)
         {
-            activePackage.RotatePackage(90f);
+            activePackage.RotatePackage(new Vector3(0, 90f, 0));
         }
     }
 

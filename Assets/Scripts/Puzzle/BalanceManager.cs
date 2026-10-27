@@ -3,16 +3,17 @@ using UnityEngine;
 public class BalanceManager : MonoBehaviour
 {
     [SerializeField] private PuzzleGrid grid;
-    public float swingAmaount = 2f; // in degrees
+    public float swingAmount = 2f; // in degrees
     public float balanceBias = 1f;
-    public float maxBalnceOffset = 20f;
+    public float maxBalanceOffset = 20f;
 
     public float xBalance;
     public float zBalance;
 
-
     private float xMiddle;
     private float zMiddle;
+
+    private Vector3 currentTilt = new Vector3();
 
     void Start()
     {
@@ -58,10 +59,17 @@ public class BalanceManager : MonoBehaviour
     void TiltPlatform(float xBalance, float zBalance)
     {
         // tilt plattform :)
-        float xTilt = Mathf.Clamp(zBalance, -maxBalnceOffset, maxBalnceOffset) * swingAmaount;
-        float zTilt = Mathf.Clamp(-xBalance, -maxBalnceOffset, maxBalnceOffset) * swingAmaount;
+        float xTilt = Mathf.Clamp(zBalance, -maxBalanceOffset, maxBalanceOffset) * swingAmount;
+        float zTilt = Mathf.Clamp(-xBalance, -maxBalanceOffset, maxBalanceOffset) * swingAmount;
+
+        currentTilt = new Vector3(xTilt, 0f, zTilt);
 
         transform.localRotation = Quaternion.Euler(xTilt, 0f, zTilt);
+    }
+
+    public Vector3 GetCurrentTilt()
+    {
+        return currentTilt;
     }
 
     void Initialize(GridCell[,] gridCells)

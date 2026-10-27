@@ -39,11 +39,11 @@ public class GridPackage : MonoBehaviour
 
     public void MovePackage(Vector3 position)
     {
-        transform.position = position;
+        transform.localPosition = position;
     }
 
-    public void RotatePackage(float amount)
+    public void RotatePackage(Vector3 rotateAmount)
     {
-        transform.Rotate(0, amount, 0);
+        transform.Rotate(rotateAmount);
     }
 }
