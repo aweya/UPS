@@ -18,7 +18,7 @@ public class PuzzleManager : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        SelectPackage(packageTypes[currentPackageType]);
+        //SelectPackage(packageTypes[currentPackageType]);
     }
 
     void Update()
@@ -43,11 +43,11 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
-    private void SelectPackage(PackageData data)
+    public void SelectPackage(PackageData data)
     {
         if (activePackage != null)
         {
-            Destroy(activePackage.gameObject);
+            //Destroy(activePackage.gameObject);
         }
         activePackage = Instantiate(data.gridPackage.gameObject, GetMousePosition(), Quaternion.identity, grid.transform).GetComponent<GridPackage>();
         activePackage.transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -85,7 +85,7 @@ public class PuzzleManager : MonoBehaviour
         activePackage = null;
         if (currentPackageType < packageTypes.Count() - 1)
         {
-            SelectPackage(packageTypes[currentPackageType]);
+            //SelectPackage(packageTypes[currentPackageType]);
         }
     }
 
@@ -93,13 +93,16 @@ public class PuzzleManager : MonoBehaviour
     {
         int x = grid.GetGridPosition(GetMousePosition()).x;
         int y = grid.GetGridPosition(GetMousePosition()).y;
-        Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
-        if (grid.GridCells[x, y].GetState() != CellState.EMPTY)
+        if (x >= grid.GridSize && y >= grid.GridSize)
         {
-            GridPackage package = grid.GridCells[x, y].GetTopPackage();
-            SelectPackage(package.Data);
-            grid.RemovePackage(package.AllPlacementPoints());
-            Destroy(package.gameObject);
+            Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
+            if (grid.GridCells[x, y].GetState() != CellState.EMPTY)
+            {
+                GridPackage package = grid.GridCells[x, y].GetTopPackage();
+                SelectPackage(package.Data);
+                grid.RemovePackage(package.AllPlacementPoints());
+                Destroy(package.gameObject);
+            }
         }
     }
 
@@ -148,7 +151,7 @@ public class PuzzleManager : MonoBehaviour
 
     void OnSwitch(InputValue value)
     {
-        if (currentPackageType < packageTypes.Count() - 1)
+        /*if (currentPackageType < packageTypes.Count() - 1)
         {
             currentPackageType++;
             SelectPackage(packageTypes[currentPackageType]);
@@ -163,6 +166,6 @@ public class PuzzleManager : MonoBehaviour
         {
             currentPackageType = 0;
             SelectPackage(packageTypes[currentPackageType]);
-        }
+        }*/
     }
 }

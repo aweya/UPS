@@ -7,8 +7,10 @@ public class GridPackage : MonoBehaviour
     private PackageData pData;
     private List<PlacementPoint> placementPoints;
     private float weight;
+    private float value;
     private bool stackable;
     public float Weight => weight;
+    public float Value => value;
     public bool Stackable => stackable;
     public PackageData Data => pData;
 
@@ -17,6 +19,7 @@ public class GridPackage : MonoBehaviour
         placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
         pData = data;
         weight = data.weight;
+        value = data.value;
         stackable = data.isStackable;
     }
 

@@ -14,4 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
   gridPackage: {fileID: -8883513406072362637, guid: 2114837de2f34bc4e9c5b39f947cf4d2, type: 3}
   weight: 1
+  value: 0
   isStackable: 1
+  icons:
+  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  packageName: 2x2 Horizontal
+  background: {fileID: 0}

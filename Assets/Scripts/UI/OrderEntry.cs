@@ -8,21 +8,34 @@ public class OrderEntry : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text textField;
     [SerializeField] private Image background;
+    private PackageData data;
+    private bool packageSpawned = false;
 
     private void Reset()
     {
         //  textField = GetComponentInChildren<TMP_Text>();
     }
 
-    public void Setup(Sprite icon, string text, Sprite background)
+    public void Setup(PackageData data)
     {
-        image.sprite = icon;
-        textField.SetText(text);
-        image.sprite = background;
+        image.sprite = data.icons[0];
+        textField.SetText(data.packageName);
+        //image = data.background;
+        this.data = data;
     }
 
     public void TopSetup(Sprite background)
     {
         image.sprite = background;
+    }
+
+    public void TicketClicked()
+    {
+        if (!packageSpawned)
+        {
+            GameManager.Instance.SpawnPackage(data);
+            Debug.Log("Ticket clicked!");
+            packageSpawned = true;
+        }
     }
 }

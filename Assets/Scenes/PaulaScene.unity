@@ -244,25 +244,14 @@ MonoBehaviour:
   topPrefab: {fileID: 6224417333885250732, guid: 74c7ea1b924b44090a4f350e7ad58a58, type: 3}
   bottomPrefab: {fileID: 6224417333885250732, guid: df2fbd0b326b245afa57ca360b762c4d, type: 3}
   container: {fileID: 501125363}
-  orders:
-  - Icons:
-    - {fileID: -1497352844, guid: b88fe2429cf4d4e1e9b501746ead78fe, type: 3}
-    Text: 
-    TicketType: 0
-  - Icons:
-    - {fileID: -29460536, guid: cc72929df199644d1adbe4c946cea3c1, type: 3}
-    - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    Text: Cat
-    TicketType: 1
-  - Icons:
-    - {fileID: -29460536, guid: cc72929df199644d1adbe4c946cea3c1, type: 3}
-    - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    Text: Rocket
-    TicketType: 1
-  - Icons:
-    - {fileID: -312228694, guid: 934335eac77624a81beb78487bcf52f0, type: 3}
-    Text: 
-    TicketType: 2
+  endSprites:
+  - {fileID: -1497352844, guid: b88fe2429cf4d4e1e9b501746ead78fe, type: 3}
+  - {fileID: -312228694, guid: 934335eac77624a81beb78487bcf52f0, type: 3}
+  data:
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
+  - {fileID: 11400000, guid: 9fe1147df2c331644b3e52f13878dd05, type: 2}
+  - {fileID: 11400000, guid: 43ef1800c7021a24aa4f3cbe4fd9151c, type: 2}
+  - {fileID: 11400000, guid: 43ef1800c7021a24aa4f3cbe4fd9151c, type: 2}
 --- !u!1 &44841041
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,7 +3446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1440094677
 RectTransform:
   m_ObjectHideFlags: 0
