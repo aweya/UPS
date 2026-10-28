@@ -6,16 +6,26 @@ public class ScoreManager : MonoBehaviour
 {
 
     [SerializeField] BalanceManager balanceManager;
+    [SerializeField] CountdownTimer countdownTimer;
     [SerializeField] private PuzzleGrid grid;
 
     [SerializeField] private float balanceCrashTreshhold = 3.5f;
+
+    public float timegracePercent = 0.2f;
+    private float timegracePeriod;
+    private float timer => countdownTimer.timeRemaining;
+
+    private float totalTimer => countdownTimer.totalTime;
     public float smuggleBusse = 100;
 
     public float moneyyyyyy;
 
+
     private float moneySumLevel = 0;
 
     private float totalBalance => balanceManager.totalBalance;
+
+
 
     void Update()
     {
@@ -65,14 +75,15 @@ public class ScoreManager : MonoBehaviour
         }
 
         // calc timerating
-        //-------still have to do this!!!!!
-        float timerating = 1;
+        // Full time rating during the grace period, then decrease to 0.
+        timegracePeriod = totalTimer * timegracePercent;
+        float timeRating = Mathf.Clamp01(timer / (totalTimer - timegracePeriod));
 
         // calc total cash
-        float finalCash = moneySumLevel * balanceRating * timerating;
+        float finalCash = moneySumLevel * balanceRating * timeRating;
 
         // smuggle package
-        //still have to do this tooo!!!
+        //still have to do this!!!
         /*
         if (smuggle = true)
             finalCash -= smuggleBusse;
@@ -80,8 +91,5 @@ public class ScoreManager : MonoBehaviour
 
         return (finalCash);
     }
-
-
-
 
 }

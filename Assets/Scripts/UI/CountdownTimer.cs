@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CountdownTimer : MonoBehaviour
 {
+    public float totalTime = 120f;
     public float timeRemaining = 60f;
     public TextMeshProUGUI timerText;
     private bool timerFinished = false;
@@ -11,7 +12,7 @@ public class CountdownTimer : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        timeRemaining = totalTime;
     }
 
     // Update is called once per frame
