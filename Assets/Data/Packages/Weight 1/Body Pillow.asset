@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
-  m_Name: Fossil
+  m_Name: Body Pillow
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -5871317596083696972, guid: 487b7cf166913a64c97edf6ab6c50123, type: 3}
-  weight: 2
+  gridPackage: {fileID: 5659398134549853064, guid: f3075a67dce01964f8be8943960dca35, type: 3}
+  weight: 1
   value: 0
   isStackable: 1
   icons:
   - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: L Horizontal
+  packageName: 3x1 Horizontal
   background: {fileID: 0}

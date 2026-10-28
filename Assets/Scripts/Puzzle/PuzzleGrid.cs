@@ -9,7 +9,8 @@ public class PuzzleGrid : MonoBehaviour
     private GridCell[,] gridCells;
     private List<GridPackage> packagesOnGrid = new List<GridPackage>();
     public GridCell[,] GridCells => gridCells;
-    public int PackagesOnGrid => packagesOnGrid.Count;
+    public List<GridPackage> PackagesOnGrid => packagesOnGrid;
+    public int TotalPackagesOnGrid => packagesOnGrid.Count;
 
     private void Awake()
     {

@@ -24,8 +24,6 @@ public class WeightScaleControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(balanceManager.balance);
-        
         pointer.transform.position = parentObject.transform.position;
         Vector3 pointerPos = new Vector3(balanceManager.balance.x*displayStrength, balanceManager.balance.y*displayStrength, 0);
 

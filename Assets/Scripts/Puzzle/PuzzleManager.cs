@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMODUnity;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] private BalanceManager balanceManager;
     private GridPackage activePackage;
     private PlayerInput playerInput;
+    public PuzzleGrid Grid => grid;
+    public BalanceManager BalanceManager => balanceManager;
 
     void Start()
     {
@@ -69,6 +72,11 @@ public class PuzzleManager : MonoBehaviour
 
     public int AmountOfPackagesOnGrid()
     {
+        return grid.TotalPackagesOnGrid;
+    }
+
+    public List<GridPackage> GetPackagesOnGrid()
+    {
         return grid.PackagesOnGrid;
     }
 
@@ -96,6 +104,8 @@ public class PuzzleManager : MonoBehaviour
         placedPackage.transform.localPosition = GetGridSnapPosition(allPlacementPoints, height);
         placedPackage.transform.localRotation = Quaternion.Euler(placedRotation);
         placedPackage.Initialize(activePackage.Data);
+
+        //RuntimeManager.PlayOneShot(activePackage.Data.placeSound);
 
         grid.PlacePackage(placedPackage, placedPackage.AllPlacementPoints());
 

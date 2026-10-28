@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
-  m_Name: Horse
+  m_Name: 2x2 H Fragile
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -8883513406072362637, guid: 2114837de2f34bc4e9c5b39f947cf4d2, type: 3}
-  weight: 2
+  gridPackage: {fileID: -8883513406072362637, guid: c42ca158f5b145c43a5bdd6ca5085ee3, type: 3}
+  weight: 1
   value: 0
   isStackable: 1
   icons:
