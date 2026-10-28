@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: 1 - 1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
   tier: 1
-  palette: {fileID: 1034660243491492091, guid: dcc5f1a3eb81fe44aa7f44d22fc02aa6, type: 3}
   levelPackages:
   - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
   - {fileID: 11400000, guid: 21c087f38f4970b4aaff50eae2ca1484, type: 2}
   - {fileID: 11400000, guid: 43ef1800c7021a24aa4f3cbe4fd9151c, type: 2}
   - {fileID: 11400000, guid: a2706f0782dca754e8b35d17ec9f968f, type: 2}
+  - {fileID: 11400000, guid: 533ba36018c669445bf16ffdb94e6a8a, type: 2}
   maxWinDeviation: 0.5

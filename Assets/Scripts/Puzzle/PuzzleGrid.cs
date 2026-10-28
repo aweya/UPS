@@ -103,5 +103,6 @@ public class PuzzleGrid : MonoBehaviour
                 Destroy(p.gameObject);
             }
         }
+        packagesOnGrid.Clear();
     }
 }
