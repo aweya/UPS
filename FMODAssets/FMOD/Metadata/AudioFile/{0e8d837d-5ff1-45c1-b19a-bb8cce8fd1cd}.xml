@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{0e8d837d-5ff1-45c1-b19a-bb8cce8fd1cd}">
+		<property name="assetPath">
+			<value>EaS_CustomerTotempole.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>192</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.0481718750000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fd7ad3a9-fd5b-4ee6-81c2-1b329a053873}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{69a0c112-4bd4-41f6-bb8e-c62020516d6e}">
 		<property name="color">
-			<value>Red Light 1</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>G_SnapPackage</value>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{832716b8-7199-4d9f-a762-e7fe137a214e}">
+		<property name="volume">
+			<value>-12.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -116,6 +119,7 @@
 	<object class="MixerBusEffectChain" id="{aacc0a43-1c53-483b-b6d4-6843dc0b86d8}">
 		<relationship name="effects">
 			<destination>{30cd57fe-d9e2-4bef-b64d-c1a715edcdc9}</destination>
+			<destination>{65853202-1f2a-43a7-8f18-a7e25488998a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{a6e06e8c-3be0-44e9-8b34-2fae1548527f}" />
@@ -127,5 +131,18 @@
 	</object>
 	<object class="MixerBusPanner" id="{ff14c87c-097f-486d-8a87-807f0b05e587}" />
 	<object class="MixerBusFader" id="{30cd57fe-d9e2-4bef-b64d-c1a715edcdc9}" />
+	<object class="PitchShifterEffect" id="{65853202-1f2a-43a7-8f18-a7e25488998a}">
+		<relationship name="modulators">
+			<destination>{d00e0e85-d32f-4aca-943a-30d50081e68e}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{7cba48c4-1b8e-42c0-9927-7657dbcadf5d}" />
+	<object class="RandomizerModulator" id="{d00e0e85-d32f-4aca-943a-30d50081e68e}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>8</value>
+		</property>
+	</object>
 </objects>

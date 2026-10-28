@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{52da763b-748d-4407-9e92-2d274ad53dbb}">
 		<property name="color">
-			<value>Red Light 1</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>EaS_IconBrainJar</value>
@@ -71,6 +71,9 @@
 		</relationship>
 	</object>
 	<object class="GroupTrack" id="{f59492bc-f485-45d7-9676-f5552b4f77d2}">
+		<relationship name="modules">
+			<destination>{ec949d81-184d-41b0-9682-c5fa1a417034}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{94951a59-6947-4367-bc78-541556e2b50c}</destination>
 		</relationship>
@@ -78,6 +81,7 @@
 	<object class="Timeline" id="{f66c6ef3-0d9d-4798-994e-771d3fa92317}">
 		<relationship name="modules">
 			<destination>{78179a67-3e8a-4ae5-95b7-d76c1cc24166}</destination>
+			<destination>{ec949d81-184d-41b0-9682-c5fa1a417034}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{50ff84bb-001c-4cbc-ab4a-7915941240c9}">
@@ -117,6 +121,17 @@
 		</relationship>
 		<relationship name="output">
 			<destination>{50ff84bb-001c-4cbc-ab4a-7915941240c9}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{ec949d81-184d-41b0-9682-c5fa1a417034}">
+		<property name="start">
+			<value>0.122</value>
+		</property>
+		<property name="length">
+			<value>0.53551020408163263</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{9063743d-6f66-45dd-98e0-2877eade6a58}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{94951a59-6947-4367-bc78-541556e2b50c}">
