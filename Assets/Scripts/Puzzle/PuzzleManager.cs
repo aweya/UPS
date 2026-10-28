@@ -47,11 +47,16 @@ public class PuzzleManager : MonoBehaviour
     {
         if (activePackage != null)
         {
-            //Destroy(activePackage.gameObject);
+            Destroy(activePackage.gameObject);
         }
         activePackage = Instantiate(data.gridPackage.gameObject, GetMousePosition(), Quaternion.identity, grid.transform).GetComponent<GridPackage>();
         activePackage.transform.localRotation = Quaternion.Euler(Vector3.zero);
         activePackage.Initialize(data);
+    }
+
+    public bool HasActivePackage()
+    {
+        return activePackage != null;
     }
 
     private void PlacePackage()
@@ -83,10 +88,6 @@ public class PuzzleManager : MonoBehaviour
 
         Destroy(activePackage.gameObject);
         activePackage = null;
-        if (currentPackageType < packageTypes.Count() - 1)
-        {
-            //SelectPackage(packageTypes[currentPackageType]);
-        }
     }
 
     private void TryPickUpPackage()
@@ -147,25 +148,5 @@ public class PuzzleManager : MonoBehaviour
         {
             activePackage.RotatePackage(new Vector3(0, 90f, 0));
         }
-    }
-
-    void OnSwitch(InputValue value)
-    {
-        /*if (currentPackageType < packageTypes.Count() - 1)
-        {
-            currentPackageType++;
-            SelectPackage(packageTypes[currentPackageType]);
-        }
-        else if (currentPackageType == packageTypes.Count() - 1)
-        {
-            currentPackageType++;
-            Destroy(activePackage.gameObject);
-            activePackage = null;
-        }
-        else
-        {
-            currentPackageType = 0;
-            SelectPackage(packageTypes[currentPackageType]);
-        }*/
     }
 }
