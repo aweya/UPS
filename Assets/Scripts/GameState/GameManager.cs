@@ -7,8 +7,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PuzzleManager puzzleManager;
     [SerializeField] private TicketManager ticketManager;
     [SerializeField] private LevelDatabase levelDatabase;
+    [SerializeField] private ScoreManager scoreManager;
+    [SerializeField] private CountdownTimer countdownTimer;
     [SerializeField] private int levelsPerTier;
     [SerializeField] private int currentTier = 1;
+    private float totalMoney;
+    public float TotalMoney => totalMoney;
     private LevelData currentLevelData;
     private List<LevelData> availableLevels = new List<LevelData>();
     private List<PackageData> levelPackages;
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
         {
             availableLevels.Add(l);
         }
+        totalMoney = 0;
     }
 
     private void Start()
@@ -72,6 +77,12 @@ public class GameManager : MonoBehaviour
 
     private void FinishLevel()
     {
+        totalMoney += scoreManager.CalculateMoneyLevel(puzzleManager.GetPackagesOnGrid(), puzzleManager.BalanceManager, countdownTimer, puzzleManager.Grid);
+        Debug.Log("Money: " + totalMoney);
+        if (totalMoney <= 0)
+        {
+            FinishGame(false);
+        }
         levelsPlayedOfTier++;
         if (levelsPlayedOfTier >= levelsPerTier)
         {
@@ -87,9 +98,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void FinishGame()
+    private void FinishGame(bool isWin)
     {
-        Debug.Log("Congrats, you've finished the game!");
+        if (isWin)
+        {
+            Debug.Log("Congrats, you've finished the game!");
+        }
+        else
+        {
+            Debug.Log("Whoops, you got fired");
+        }
     }
 
     public void SpawnPackage(PackageData data, OrderEntry entry)
@@ -111,7 +129,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentTier >= highestTier)
         {
-
+            FinishGame(true);
         }
         else
         {

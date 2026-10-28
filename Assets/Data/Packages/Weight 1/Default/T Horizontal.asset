@@ -14,8 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
   gridPackage: {fileID: 5659398134549853064, guid: 888a5fa70f115c24bb6e45489fddc661, type: 3}
   weight: 1
-  value: 0
+  value: 5
   isStackable: 1
+  spawnSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  gridSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  placeSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   icons:
   - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   packageName: T Horizontal

@@ -1,69 +1,40 @@
+using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-
-    [SerializeField] BalanceManager balanceManager;
-    [SerializeField] CountdownTimer countdownTimer;
-    [SerializeField] private PuzzleGrid grid;
-
     [SerializeField] private float balanceCrashTreshhold = 3.5f;
 
-    public float timegracePercent = 0.2f;
-    private float timegracePeriod;
-    private float timer => countdownTimer.timeRemaining;
-
-    private float totalTimer => countdownTimer.totalTime;
+    public float timeGracePercent = 0.2f;
+    private float timeGracePeriod;
     public float smuggleBusse = 100;
 
-    public float moneyyyyyy;
-
-
-    private float moneySumLevel = 0;
-
-    private float totalBalance => balanceManager.totalBalance;
-
-
-
-    void Update()
+    public float CalculateMoneyLevel(List<GridPackage> placedPackages, BalanceManager balanceManager, CountdownTimer countdownTimer, PuzzleGrid grid)
     {
-        moneyyyyyy = CalculateMoneyLevel(grid.GridCells);
-    }
-
-
-
-
-
-    float CalculateMoneyLevel(GridCell[,] gridCells)
-    {
+        float timer = countdownTimer.timeRemaining;
+        float totalTimer = countdownTimer.totalTime;
+        float totalBalance = balanceManager.totalBalance;
         //score per level
         // all packages added * balance * time left
-        moneySumLevel = 0;
-        //read every cell and add money
+        float moneySumLevel = 0;
 
-        for (int x = 0; x < gridCells.GetLength(0); x++)
+        foreach (var p in placedPackages)
         {
-            for (int z = 0; z < gridCells.GetLength(1); z++)
-            {
-                //get value
-                float value = gridCells[x, z].GetWeight(); //chanche to mooney!!!!!!!!!!!!!!!!!!!!!!
-                //add to sum
-                moneySumLevel += value;
-            }
+            float value = p.Data.value;
+            moneySumLevel += value;
         }
 
         // check if rocket is off balance and crashes
         if (totalBalance > balanceCrashTreshhold)
         {
-            // payy all packages
-            return (-moneySumLevel);
+            return -moneySumLevel;
         }
 
-        // sucsessfull delivery
+        // successful delivery
 
-        // calc balancerating
+        // calc balance rating
         float balanceRating = 0;
         if (totalBalance > balanceCrashTreshhold - 0.1f)
         {
@@ -76,8 +47,8 @@ public class ScoreManager : MonoBehaviour
 
         // calc timerating
         // Full time rating during the grace period, then decrease to 0.
-        timegracePeriod = totalTimer * timegracePercent;
-        float timeRating = Mathf.Clamp01(timer / (totalTimer - timegracePeriod));
+        timeGracePeriod = totalTimer * timeGracePercent;
+        float timeRating = Mathf.Clamp01(timer / (totalTimer - timeGracePeriod));
 
         // calc total cash
         float finalCash = moneySumLevel * balanceRating * timeRating;
@@ -88,8 +59,7 @@ public class ScoreManager : MonoBehaviour
         if (smuggle = true)
             finalCash -= smuggleBusse;
         */
-
-        return (finalCash);
+        return finalCash;
     }
 
 }
