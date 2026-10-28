@@ -1,11 +1,30 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LevelDatabase", menuName = "Scriptable Objects/LevelDatabase")]
 public class LevelDatabase : ScriptableObject
 {
-    public List<LevelData> tierOneLevels;
-    public List<LevelData> tierTwoLevels;
-    public List<LevelData> tierThreeLevels;
-    public List<LevelData> tierFourLevels;
+    public List<LevelDataWrapper> allLevelData;
+    public List<LevelData> GetLevelsOfTier(int tier)
+    {
+        if (tier > allLevelData.Count)
+        {
+            return null;
+        }
+        else
+        {
+            return allLevelData[tier - 1].GetLevelData();
+        }
+    }
+}
+
+[Serializable]
+public class LevelDataWrapper
+{
+    public List<LevelData> levelData;
+    public List<LevelData> GetLevelData()
+    {
+        return levelData;
+    }
 }
