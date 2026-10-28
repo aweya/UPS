@@ -972,9 +972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   pointer: {fileID: 305677449}
   parentObject: {fileID: 1440094676}
-  radius: 50
-  weightX: 10
-  weightZ: -50
+  radius: 40
+  weightX: 0
+  weightZ: 0
 --- !u!114 &305677453
 MonoBehaviour:
   m_ObjectHideFlags: 0

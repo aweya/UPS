@@ -29,24 +29,10 @@ public class WeightScaleControl : MonoBehaviour
         pointer.transform.position += pointerPos;
 
         // restrict pointer from leaving certain radius 
-        if (Vector3.Distance(parentObject.transform.position, pointerPos) > radius)
+        //if (Vector3.Distance(parentObject.transform.position, pointerPos) > radius)
+        if (Mathf.Abs(weightX) > radius || Mathf.Abs(weightZ) > radius || Mathf.Abs(weightX) >= 30 && Mathf.Abs(weightZ) >= 30)
         {
             transform.localPosition = transform.localPosition.normalized * radius;
         }
-        
-
-
-
-
-
-        /*Vector3 FromCircleToObject = pointerPos - groupCenter;
-        FromCircleToObject *= radius / FromCircleToObject;
-        pointerPos = radius + FromCircleToObject;   */
-
-        
-
-    
-        
-        
     }
 }
