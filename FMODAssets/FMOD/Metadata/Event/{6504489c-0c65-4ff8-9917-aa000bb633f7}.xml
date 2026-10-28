@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{6504489c-0c65-4ff8-9917-aa000bb633f7}">
 		<property name="color">
-			<value>Red Light 1</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>G_Ambiance</value>
@@ -124,6 +124,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{c1b7fdac-3b38-4d44-bb6e-a8d4817f0b4c}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -223,6 +226,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{1648ba83-2502-4907-bd9f-206d7f439a52}">
+		<property name="volume">
+			<value>-13</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>

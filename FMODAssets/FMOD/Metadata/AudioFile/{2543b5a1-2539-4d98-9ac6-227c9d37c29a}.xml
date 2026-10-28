@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{2543b5a1-2539-4d98-9ac6-227c9d37c29a}">
+		<property name="assetPath">
+			<value>G_PlatformRotate.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.5681632653061222</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fd7ad3a9-fd5b-4ee6-81c2-1b329a053873}</destination>
+		</relationship>
+	</object>
+</objects>

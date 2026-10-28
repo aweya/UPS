@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{ffb41306-0a34-4927-980a-9ebb67d6a33c}">
+		<property name="assetPath">
+			<value>UPS_Song_high_intensity.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>140.01632653061225</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{fd7ad3a9-fd5b-4ee6-81c2-1b329a053873}</destination>
+		</relationship>
+	</object>
+</objects>
