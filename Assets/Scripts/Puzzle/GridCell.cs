@@ -10,6 +10,7 @@ public class GridCell
 
     public void Initialize(int height, CellState startState)
     {
+        packages.Clear();
         maxHeight = height;
         cellState = startState;
     }

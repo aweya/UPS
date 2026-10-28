@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,15 +11,16 @@ public class UIManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject gameScreen;
     public GameObject tutorialScreen;
+    public Button Stamp;
 
     public int currentMoney;
 
     private bool firstGameStart = true;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -49,7 +51,7 @@ public class UIManager : MonoBehaviour
             mainMenu.SetActive(false);
             tutorialScreen.SetActive(true);
             firstGameStart = false;
-        } 
+        }
         else
         {
             mainMenu.SetActive(false);
