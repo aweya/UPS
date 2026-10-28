@@ -1,36 +1,36 @@
 using System.Reflection;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeightScaleControl : MonoBehaviour
 {
+
+    [SerializeField] private BalanceManager balanceManager;
+
     [SerializeField] public GameObject pointer;
     [SerializeField] public GameObject parentObject;
     [SerializeField] public int radius;
+    [SerializeField] public int displayStrength = 4;
 
 
-    [Range(-10.0f, 10.0f)] public int weightX;
-    [Range(-10.0f, 10.0f)] public int weightZ;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
+        
     }
 
 
     void Update()
     {
-        //set pointer to new position from the origin point
         pointer.transform.position = parentObject.transform.position;
-        Vector3 pointerPos = new Vector3(weightX*4, weightZ*4, 0);
+        Vector3 pointerPos = new Vector3(balanceManager.balance.x*displayStrength, balanceManager.balance.y*displayStrength, 0);
 
-        // add new position to the pointer
         pointer.transform.position += pointerPos;
+        pointer.transform.RotateAround(parentObject.transform.position,Vector3.forward,45);
 
-        // restrict pointer from leaving certain radius 
-        //if (Vector3.Distance(parentObject.transform.position, pointerPos) > radius)
-        if (Mathf.Abs(weightX*4) > radius || Mathf.Abs(weightZ*4) > radius || Mathf.Abs(weightX*4) >= 30 && Mathf.Abs(weightZ*4) >= 30)
+        if (Mathf.Abs(balanceManager.balance.x*displayStrength) > radius || Mathf.Abs(balanceManager.balance.y*displayStrength) > radius || Mathf.Abs(balanceManager.balance.x*displayStrength) >= 30 && Mathf.Abs(balanceManager.balance.y*displayStrength) >= 30)
         {
             transform.localPosition = transform.localPosition.normalized * radius;
         }
