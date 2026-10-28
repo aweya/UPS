@@ -1,36 +1,52 @@
+using System.Reflection;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeightScaleControl : MonoBehaviour
 {
     [SerializeField] public GameObject pointer;
+    [SerializeField] public GameObject parentObject;
+    [SerializeField] public int radius;
 
-    private bool weight10 = false;
 
     public int weightX;
     public int weightZ;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+    
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (weightX == 10)
+        //set pointer to new position from the origin point
+        pointer.transform.position = parentObject.transform.position;
+        Vector3 pointerPos = new Vector3(weightX, weightZ, 0);
+
+        // add new position to the pointer
+        pointer.transform.position += pointerPos;
+
+        // restrict pointer from leaving certain radius 
+        if (Vector3.Distance(parentObject.transform.position, pointerPos) > radius)
         {
-            if(!weight10){
-                pointer.transform.position = pointer.transform.position + new Vector3(40, 0, 0);
-                weight10 = true;
-            }
-        } else {weight10 = false;}
-        if (weightX == 0)
-        {
-            if(!weight10){
-                pointer.transform.position = pointer.transform.position + new Vector3(40, 0, 0);
-                weight10 = true;
-            }
-        } else {weight10 = false;}
+            transform.localPosition = transform.localPosition.normalized * radius;
+        }
+        
+
+
+
+
+
+        /*Vector3 FromCircleToObject = pointerPos - groupCenter;
+        FromCircleToObject *= radius / FromCircleToObject;
+        pointerPos = radius + FromCircleToObject;   */
+
+        
+
+    
+        
+        
     }
 }

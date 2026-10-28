@@ -932,7 +932,6 @@ GameObject:
   - component: {fileID: 305677454}
   - component: {fileID: 305677453}
   - component: {fileID: 305677452}
-  - component: {fileID: 305677451}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -959,21 +958,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &305677451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305677449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd396e057b90454fb16997d0b16bc51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  pointer: {fileID: 305677449}
-  weightX: 0
-  weightZ: 0
 --- !u!114 &305677452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,9 +970,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd396e057b90454fb16997d0b16bc51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pointer: {fileID: 0}
-  weightX: 0
-  weightZ: 0
+  pointer: {fileID: 305677449}
+  parentObject: {fileID: 1440094676}
+  radius: 50
+  weightX: 10
+  weightZ: -50
 --- !u!114 &305677453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3446,7 +3432,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1440094677
 RectTransform:
   m_ObjectHideFlags: 0
