@@ -972,9 +972,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   pointer: {fileID: 305677449}
   parentObject: {fileID: 1440094676}
-  radius: 50
-  weightX: 10
-  weightZ: -50
+  radius: 40
+  weightX: 0
+  weightZ: 0
 --- !u!114 &305677453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1770,7 +1770,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
   grid: {fileID: 1658691121}
-  packageTypes: []
   puzzleMask:
     serializedVersion: 2
     m_Bits: 8
@@ -3414,6 +3413,7 @@ MonoBehaviour:
   mainMenu: {fileID: 1628077659}
   gameScreen: {fileID: 1283870487}
   tutorialScreen: {fileID: 44841041}
+  Stamp: {fileID: 0}
   currentMoney: 100
 --- !u!1 &1440094676
 GameObject:
