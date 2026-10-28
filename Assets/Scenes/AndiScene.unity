@@ -1426,7 +1426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1244903f9c2ebd4458dbff6dd94761b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
-  grid: {fileID: 1658691121}
+  grid: {fileID: 0}
   packageTypes:
   - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
   - {fileID: 11400000, guid: b71f8de3c3332714da296c4e65b51800, type: 2}
@@ -1438,7 +1438,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   test: {fileID: 0}
-  balanceManager: {fileID: 1658691122}
+  balanceManager: {fileID: 0}
 --- !u!4 &603484844
 Transform:
   m_ObjectHideFlags: 0
@@ -3769,8 +3769,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   puzzleManager: {fileID: 7605416939369699767}
-  levelData: {fileID: 11400000, guid: 6db470aa0bc7cff48a10944253607d5e, type: 2}
   ticketManager: {fileID: 1107398021}
+  levelDatabase: {fileID: 11400000, guid: 5acd32f338f5da341b49386516fd530d, type: 2}
+  levelsPerTier: 2
+  currentTier: 1
 --- !u!4 &1461270817
 Transform:
   m_ObjectHideFlags: 0
@@ -4060,28 +4062,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627279789}
   m_CullTransparentMesh: 1
---- !u!114 &1658691121 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4072897205043673758, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-  m_PrefabInstance: {fileID: 7704731140215238285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7e07e6f6c63b3142940fa092096b4ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PuzzleGrid
---- !u!114 &1658691122 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9219825219692848278, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-  m_PrefabInstance: {fileID: 7704731140215238285}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf82f855eba7944b9c0eee87b373749, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BalanceManager
 --- !u!1 &1744667828
 GameObject:
   m_ObjectHideFlags: 0
@@ -5667,83 +5647,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1244903f9c2ebd4458dbff6dd94761b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PuzzleManager
---- !u!1001 &7704731140215238285
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 551843622495097767, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3050234590643503718, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_Name
-      value: Palette 4x4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3050234590643503718, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: packageTypes.Array.size
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: 'packageTypes.Array.data[6]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 57e9b5820906b954689d2526de0c87c0, type: 2}
-    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: 'packageTypes.Array.data[7]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 533ba36018c669445bf16ffdb94e6a8a, type: 2}
-    - target: {fileID: 5790050885143965637, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
-      propertyPath: 'packageTypes.Array.data[8]'
-      value: 
-      objectReference: {fileID: 11400000, guid: 21c087f38f4970b4aaff50eae2ca1484, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d6167a71fb5360d4f8e0229c85c1d989, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5751,7 +5654,6 @@ SceneRoots:
   - {fileID: 2044823583}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 7704731140215238285}
   - {fileID: 7605416939369699766}
   - {fileID: 603484844}
   - {fileID: 2077731727}

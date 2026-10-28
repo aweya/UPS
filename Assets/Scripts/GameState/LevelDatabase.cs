@@ -8,7 +8,7 @@ public class LevelDatabase : ScriptableObject
     public List<LevelDataWrapper> allLevelData;
     public List<LevelData> GetLevelsOfTier(int tier)
     {
-        if (tier > allLevelData.Count - 1)
+        if (tier > allLevelData.Count)
         {
             return null;
         }

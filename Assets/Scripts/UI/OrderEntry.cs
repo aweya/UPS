@@ -33,9 +33,14 @@ public class OrderEntry : MonoBehaviour
     {
         if (!packageSpawned)
         {
-            GameManager.Instance.SpawnPackage(data);
+            GameManager.Instance.SpawnPackage(data, this);
             Debug.Log("Ticket clicked!");
             packageSpawned = true;
         }
+    }
+
+    public void ReturnPackage()
+    {
+        packageSpawned = false;
     }
 }
