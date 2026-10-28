@@ -9,8 +9,8 @@ public class WeightScaleControl : MonoBehaviour
     [SerializeField] public int radius;
 
 
-    public int weightX;
-    public int weightZ;
+    [Range(-10.0f, 10.0f)] public int weightX;
+    [Range(-10.0f, 10.0f)] public int weightZ;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,14 +23,14 @@ public class WeightScaleControl : MonoBehaviour
     {
         //set pointer to new position from the origin point
         pointer.transform.position = parentObject.transform.position;
-        Vector3 pointerPos = new Vector3(weightX, weightZ, 0);
+        Vector3 pointerPos = new Vector3(weightX*4, weightZ*4, 0);
 
         // add new position to the pointer
         pointer.transform.position += pointerPos;
 
         // restrict pointer from leaving certain radius 
         //if (Vector3.Distance(parentObject.transform.position, pointerPos) > radius)
-        if (Mathf.Abs(weightX) > radius || Mathf.Abs(weightZ) > radius || Mathf.Abs(weightX) >= 30 && Mathf.Abs(weightZ) >= 30)
+        if (Mathf.Abs(weightX*4) > radius || Mathf.Abs(weightZ*4) > radius || Mathf.Abs(weightX*4) >= 30 && Mathf.Abs(weightZ*4) >= 30)
         {
             transform.localPosition = transform.localPosition.normalized * radius;
         }
