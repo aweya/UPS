@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     private void SetUpLevel()
     {
+        puzzleManager.ResetPuzzle();
         currentLevelData = GetRandomLevel();
         levelPackages = currentLevelData.levelPackages;
         ticketManager.CreateOrders(levelPackages);
@@ -55,6 +56,18 @@ public class GameManager : MonoBehaviour
         LevelData randomLevel = availableLevels[randomIndex];
         availableLevels.Remove(randomLevel);
         return randomLevel;
+    }
+
+    public void TryFinishLevel()
+    {
+        if (puzzleManager.AmountOfPackagesOnGrid() == levelPackages.Count)
+        {
+            FinishLevel();
+        }
+        else
+        {
+            Debug.Log("Packages left in order!");
+        }
     }
 
     private void FinishLevel()
@@ -72,6 +85,11 @@ public class GameManager : MonoBehaviour
         {
             SetUpLevel();
         }
+    }
+
+    private void FinishGame()
+    {
+        Debug.Log("Congrats, you've finished the game!");
     }
 
     public void SpawnPackage(PackageData data, OrderEntry entry)

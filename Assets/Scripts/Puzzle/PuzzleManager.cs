@@ -7,13 +7,11 @@ using UnityEngine.InputSystem;
 public class PuzzleManager : MonoBehaviour
 {
     [SerializeField] private PuzzleGrid grid;
-    [SerializeField] private PackageData[] packageTypes;
     [SerializeField] private LayerMask puzzleMask;
     [SerializeField] private GameObject test;
     [SerializeField] private BalanceManager balanceManager;
     private GridPackage activePackage;
     private PlayerInput playerInput;
-    private int currentPackageType = 0;
 
     void Start()
     {
@@ -43,6 +41,16 @@ public class PuzzleManager : MonoBehaviour
         }
     }
 
+    public void ResetPuzzle()
+    {
+        if (activePackage != null)
+        {
+            Destroy(activePackage.gameObject);
+        }
+        activePackage = null;
+        grid.ResetGrid();
+    }
+
     public void SelectPackage(PackageData data)
     {
         if (activePackage != null)
@@ -57,6 +65,11 @@ public class PuzzleManager : MonoBehaviour
     public bool HasActivePackage()
     {
         return activePackage != null;
+    }
+
+    public int AmountOfPackagesOnGrid()
+    {
+        return grid.PackagesOnGrid;
     }
 
     private void PlacePackage()
@@ -96,12 +109,12 @@ public class PuzzleManager : MonoBehaviour
         int y = grid.GetGridPosition(GetMousePosition()).y;
         if (x <= grid.GridSize && y <= grid.GridSize)
         {
-            Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
+            //Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
             if (grid.GridCells[x, y].GetState() != CellState.EMPTY)
             {
                 GridPackage package = grid.GridCells[x, y].GetTopPackage();
                 SelectPackage(package.Data);
-                grid.RemovePackage(package.AllPlacementPoints());
+                grid.RemovePackage(package, package.AllPlacementPoints());
                 Destroy(package.gameObject);
             }
         }
