@@ -12,7 +12,7 @@ public class ScoreManager : MonoBehaviour
 
     public float timeGracePercent = 0.2f;
     private float timeGracePeriod;
-    public float smuggleBusse = 100;
+    public float smugglePenalty = 100;
 
     public float CalculateMoneyLevel(List<GridPackage> placedPackages, BalanceManager balanceManager, CountdownTimer countdownTimer, PuzzleGrid grid)
     {
@@ -62,6 +62,13 @@ public class ScoreManager : MonoBehaviour
         if (smuggle = true)
             finalCash -= smuggleBusse;
         */
+        if (grid.HasSmugglePackage() != null)
+        {
+            if (!grid.HasSmugglePackage().CheckSmugglePackage())
+            {
+                finalCash -= smugglePenalty;
+            }
+        }
 
         if (finalCash > 0)
         {

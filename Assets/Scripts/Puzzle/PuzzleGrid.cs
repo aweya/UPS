@@ -33,7 +33,6 @@ public class PuzzleGrid : MonoBehaviour
         packagesOnGrid.Add(package);
     }
 
-
     public void RemovePackage(GridPackage package, List<PlacementPoint> placementPoints)
     {
         foreach (var p in placementPoints)
@@ -114,5 +113,17 @@ public class PuzzleGrid : MonoBehaviour
             }
         }
         packagesOnGrid.Clear();
+    }
+
+    public GridPackage HasSmugglePackage()
+    {
+        foreach (var p in packagesOnGrid)
+        {
+            if (p.IsSmugglePackage)
+            {
+                return p;
+            }
+        }
+        return null;
     }
 }

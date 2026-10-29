@@ -16,6 +16,8 @@ MonoBehaviour:
   weight: 1
   value: 0
   isStackable: 0
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393
@@ -41,4 +43,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3b0bcf4b4aa704fa486b10d292076ea5, type: 3}
   - {fileID: 21300000, guid: db6ba858361e54941a4b6f9ccc8c23f2, type: 3}
   packageName: Space Jacuzy
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 8aeb54bbd14be408299b4fc91687b466, type: 3}

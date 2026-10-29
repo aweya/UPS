@@ -10,6 +10,10 @@ public class PackageData : ScriptableObject
     public float value;
     public bool isStackable;
 
+    [Header("Smuggle Package")]
+    public bool isSmugglePackage;
+    public int smugglePackageMinimumFacesCovered;
+
     [Header("Sound")]
     public EventReference spawnSound;
     public EventReference gridSound;
