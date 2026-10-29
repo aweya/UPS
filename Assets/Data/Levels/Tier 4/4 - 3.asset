@@ -20,4 +20,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2a0a3e4248392834d9188ad5398bcee5, type: 2}
   - {fileID: 11400000, guid: 0de163866989c8c4190d02f167d4cc06, type: 2}
   maxWinDeviation: 0
-  levelCharacter: {fileID: 0}
+  levelCharacter: {fileID: 11400000, guid: bb6f8949d3f48704992d06d009c9fb2a, type: 2}
