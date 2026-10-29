@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9cb9c6c2582f104daec2ce1e92d357f, type: 3}
+  m_Name: Asset#51
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterData
+  characterName: Asset 51
+  visuals: {fileID: 8083764723768014375, guid: 8d6f4aa2b929a544bb86fec618d7498e, type: 3}
+  characterSound:
+    Guid:
+      Data1: 1390048827
+      Data2: 1141339277
+      Data3: 657298078
+      Data4: -1153575606
+    Path: event:/EndAndStart/EaS_IconBrainJar

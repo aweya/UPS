@@ -8,7 +8,7 @@ public class OrderEntry : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text textField;
-    [SerializeField] private Sprite background;
+    [SerializeField] private Image background;
     private PackageData data;
     private bool packageSpawned = false;
     private Sprite[] icons;
@@ -23,7 +23,7 @@ public class OrderEntry : MonoBehaviour
         icons = data.icons;
         image.sprite = icons[0];
         textField.SetText(data.packageName);
-        background = data.background;
+        background.sprite = data.background;
         this.data = data;
     }
 
