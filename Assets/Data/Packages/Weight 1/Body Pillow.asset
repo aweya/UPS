@@ -16,6 +16,8 @@ MonoBehaviour:
   weight: 1
   value: 0
   isStackable: 1
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393
@@ -38,6 +40,7 @@ MonoBehaviour:
       Data4: -774397013
     Path: event:/Game/G_BodyPillow
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 3x1 Horizontal
-  background: {fileID: 0}
+  - {fileID: 21300000, guid: 59cee6e0364724bb5914844270162b51, type: 3}
+  - {fileID: 21300000, guid: 59244b4097dd44e6eb8bcf1b15664b23, type: 3}
+  packageName: Jerry Pillow
+  background: {fileID: 21300000, guid: e625d7cab3ca9466d8cd9a0c9f86f1cf, type: 3}

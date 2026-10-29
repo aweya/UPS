@@ -16,6 +16,8 @@ MonoBehaviour:
   weight: 2
   value: 0
   isStackable: 1
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393
@@ -41,4 +43,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 01ac7254f28ee4db99614bff4e84f9fc, type: 3}
   - {fileID: 21300000, guid: 3fe690303b7f74ca9a22d4c8b77ca71d, type: 3}
   packageName: Mr Snappy
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 4e758f6a2743947ae809cffe4a0edd00, type: 3}

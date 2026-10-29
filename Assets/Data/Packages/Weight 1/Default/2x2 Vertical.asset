@@ -41,4 +41,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5d1e8b41a2358409b9bb043f0d023b37, type: 3}
   - {fileID: 21300000, guid: 474b3aaddc12a4a139277b9aa93da116, type: 3}
   packageName: Lots of Plushies
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: e625d7cab3ca9466d8cd9a0c9f86f1cf, type: 3}
