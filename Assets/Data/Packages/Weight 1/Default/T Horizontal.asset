@@ -41,4 +41,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 30a1a7544c906474d955dddcca4175a1, type: 3}
   - {fileID: 21300000, guid: cbce78e1a6fd246cf8ce23318c7dbae9, type: 3}
   packageName: Bouncy Balls
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: e625d7cab3ca9466d8cd9a0c9f86f1cf, type: 3}

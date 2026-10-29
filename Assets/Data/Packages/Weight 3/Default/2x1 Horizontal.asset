@@ -16,6 +16,8 @@ MonoBehaviour:
   weight: 3
   value: 0
   isStackable: 1
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393
@@ -41,4 +43,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 73d99de07637f4084b71f968cb7b5d29, type: 3}
   - {fileID: 21300000, guid: c903b2c77d96a423bae84f627770b1a1, type: 3}
   packageName: Exhaust Pipe
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: e625d7cab3ca9466d8cd9a0c9f86f1cf, type: 3}

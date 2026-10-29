@@ -16,6 +16,8 @@ MonoBehaviour:
   weight: 2
   value: 0
   isStackable: 1
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393
@@ -41,4 +43,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e0bf35268fb104b70a9017339a96a490, type: 3}
   - {fileID: 21300000, guid: 4f08b756e870544ecbcb7021d25a1789, type: 3}
   packageName: Vintage TV
-  background: {fileID: 0}
+  background: {fileID: 21300000, guid: 4e758f6a2743947ae809cffe4a0edd00, type: 3}
