@@ -16,6 +16,27 @@ MonoBehaviour:
   weight: 2
   value: 0
   isStackable: 1
+  spawnSound:
+    Guid:
+      Data1: 1143111393
+      Data2: 1097876888
+      Data3: 866537619
+      Data4: 225239739
+    Path: event:/Game/G_PickupPackage
+  gridSound:
+    Guid:
+      Data1: 1772142866
+      Data2: 1106660308
+      Data3: 549883579
+      Data4: 1852657952
+    Path: event:/Game/G_SnapPackage
+  placeSound:
+    Guid:
+      Data1: -1618693856
+      Data2: 1208462266
+      Data3: 85463189
+      Data4: -137298673
+    Path: event:/Game/G_PlainPackage
   icons:
   - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   packageName: L Vertical
