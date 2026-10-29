@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1216104235754616412}
   - component: {fileID: 8686827415594990243}
   - component: {fileID: 7536905014210420468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846011025928389137}
   - component: {fileID: 5659398134549853064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: L Vertical
   m_TagString: Package
   m_Icon: {fileID: 0}
@@ -189,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e246200164bbe4846860be84fcb46e6c, type: 3}
       propertyPath: m_Name
       value: kartonbox_2x2L_V
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e246200164bbe4846860be84fcb46e6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e246200164bbe4846860be84fcb46e6c, type: 3}
       propertyPath: m_TagString
@@ -290,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PackageUnit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -351,6 +359,10 @@ PrefabInstance:
     - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
       propertyPath: m_Name
       value: PackageUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

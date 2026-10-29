@@ -118,7 +118,7 @@ public class PuzzleManager : MonoBehaviour
     {
         int x = grid.GetGridPosition(GetMousePosition()).x;
         int y = grid.GetGridPosition(GetMousePosition()).y;
-        if (x > 0 && x <= grid.GridSize && y > 0 && y <= grid.GridSize)
+        if (x >= 0 && x < grid.GridSize && y >= 0 && y < grid.GridSize)
         {
             Debug.Log("Cell " + x + ", " + y + " - " + grid.GridCells[x, y].GetState());
             if (grid.GridCells[x, y].GetState() != CellState.EMPTY)
