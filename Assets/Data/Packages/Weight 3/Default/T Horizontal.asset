@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -137298673
     Path: event:/Game/G_PlainPackage
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: T Horizontal
+  - {fileID: 21300000, guid: 30a1a7544c906474d955dddcca4175a1, type: 3}
+  - {fileID: 21300000, guid: cbce78e1a6fd246cf8ce23318c7dbae9, type: 3}
+  packageName: Steel fence
   background: {fileID: 0}
