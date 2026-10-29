@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -1385481113
     Path: event:/Game/G_DesignerStuhl
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 2x2 Vertical
+  - {fileID: 21300000, guid: fe4bd7decc83f4abbb9399758d5771ad, type: 3}
+  - {fileID: 21300000, guid: 95c5ad8a6dc774f71bc8d3370bf92d76, type: 3}
+  packageName: Lounge chair
   background: {fileID: 0}

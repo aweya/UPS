@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -137298673
     Path: event:/Game/G_PlainPackage
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 2x1 Vertical
+  - {fileID: 21300000, guid: 09a014cff1d104abc844b5234544832d, type: 3}
+  - {fileID: 21300000, guid: 5bc47df541ad04262a97d880525498b3, type: 3}
+  packageName: Dumbells
   background: {fileID: 0}

@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -1286520108
     Path: event:/Game/G_Fossil
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: L Horizontal
+  - {fileID: 21300000, guid: 01ac7254f28ee4db99614bff4e84f9fc, type: 3}
+  - {fileID: 21300000, guid: 3fe690303b7f74ca9a22d4c8b77ca71d, type: 3}
+  packageName: Mr Snappy
   background: {fileID: 0}

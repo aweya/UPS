@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -137298673
     Path: event:/Game/G_PlainPackage
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 1x1 Horizontal
+  - {fileID: 21300000, guid: 1d674fb3c59f34d42ae2a0ae229d8869, type: 3}
+  - {fileID: 21300000, guid: 0608187377f5b4c519301dbc534f1323, type: 3}
+  packageName: Porcelain plates
   background: {fileID: 0}

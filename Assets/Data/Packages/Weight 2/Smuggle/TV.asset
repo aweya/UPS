@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: 1348014477
     Path: event:/Game/G_Fernseher
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 2x1 Horizontal
+  - {fileID: 21300000, guid: e0bf35268fb104b70a9017339a96a490, type: 3}
+  - {fileID: 21300000, guid: 4f08b756e870544ecbcb7021d25a1789, type: 3}
+  packageName: Vintage TV
   background: {fileID: 0}

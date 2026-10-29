@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -137298673
     Path: event:/Game/G_PlainPackage
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: L Vertical
+  - {fileID: 21300000, guid: 6779554a0405c40f3863430b7c0a0472, type: 3}
+  - {fileID: 21300000, guid: 43c46fa551fd044d1971d07706689d22, type: 3}
+  packageName: Glass jars
   background: {fileID: 0}

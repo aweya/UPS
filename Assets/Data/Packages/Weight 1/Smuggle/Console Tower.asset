@@ -38,6 +38,7 @@ MonoBehaviour:
       Data4: -1579549716
     Path: event:/Game/G_GameConsoleTower
   icons:
-  - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  packageName: 1x1 Horizontal
+  - {fileID: 21300000, guid: ca65390f1b8e14079be6c99bb3499f6b, type: 3}
+  - {fileID: 21300000, guid: 56a627733c50e492fa3cb8de757cdf94, type: 3}
+  packageName: Cool console
   background: {fileID: 0}
