@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
 	<object class="Workspace" id="{2e5c729b-d06d-4e3b-b661-c7adf595e022}">
-		<property name="builtBanksOutputDirectory">
-			<value>../../UPS/FMODAssets</value>
-		</property>
+		<property name="builtBanksOutputDirectory" />
 		<relationship name="masterEventFolder">
 			<destination>{c9bbebe2-37ae-49a5-8cae-da41a1e502a8}</destination>
 		</relationship>
