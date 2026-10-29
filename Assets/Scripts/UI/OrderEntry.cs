@@ -8,9 +8,10 @@ public class OrderEntry : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text textField;
-    [SerializeField] private Image background;
+    [SerializeField] private Sprite background;
     private PackageData data;
     private bool packageSpawned = false;
+    private Sprite[] icons;
 
     private void Reset()
     {
@@ -19,9 +20,10 @@ public class OrderEntry : MonoBehaviour
 
     public void Setup(PackageData data)
     {
-        image.sprite = data.icons[0];
+        icons = data.icons;
+        image.sprite = icons[0];
         textField.SetText(data.packageName);
-        //image = data.background;
+        background = data.background;
         this.data = data;
     }
 
@@ -34,6 +36,7 @@ public class OrderEntry : MonoBehaviour
     {
         if (!packageSpawned)
         {
+            image.sprite = icons[1];
             GameManager.Instance.SpawnPackage(data, this);
             Debug.Log("Ticket clicked!");
             RuntimeManager.PlayOneShot(data.spawnSound);
@@ -43,6 +46,7 @@ public class OrderEntry : MonoBehaviour
 
     public void ReturnPackage()
     {
+        image.sprite = icons[0];
         packageSpawned = false;
     }
 }

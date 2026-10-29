@@ -87,6 +87,15 @@ public class PuzzleGrid : MonoBehaviour
         return (x, y);
     }
 
+    public bool IsValidGridPosition(int x, int y)
+    {
+        if (x < 0 || y < 0 || x >= GridSize || y >= GridSize)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public void ResetGrid()
     {
         for (int x = 0; x < gridCells.GetLength(0); x++)

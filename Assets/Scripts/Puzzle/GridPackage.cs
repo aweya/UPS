@@ -15,6 +15,7 @@ public class GridPackage : MonoBehaviour
     public PackageData Data => pData;
 
     private bool isSmugglePackage;
+    private int smugglePackageMinimumFacesCovered;
 
     public void Initialize(PackageData data)
     {
@@ -55,11 +56,41 @@ public class GridPackage : MonoBehaviour
         transform.Rotate(rotateAmount);
     }
 
-    public void CheckSmugglePackage()
+    public bool CheckSmugglePackage()
     {
         if (isSmugglePackage)
         {
+            int facesCovered = 0;
+            foreach (var p in AllPlacementPoints())
+            {
+                Vector3[] directions = new Vector3[]
+                {
+                    p.transform.forward,
+                    -p.transform.forward,
+                    p.transform.right,
+                    -p.transform.right,
+                    p.transform.up
+                };
 
+                foreach (Vector3 dir in directions)
+                {
+                    Vector3 raycastPos = new Vector3(p.transform.localPosition.x, p.transform.localPosition.y + 0.5f, p.transform.localPosition.z);
+                    RaycastHit hit;
+                    if (Physics.Raycast(raycastPos, dir, out hit, 0.6f))
+                    {
+                        facesCovered++;
+                    }
+                }
+            }
+            if (facesCovered >= smugglePackageMinimumFacesCovered)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+        return false;
     }
 }
