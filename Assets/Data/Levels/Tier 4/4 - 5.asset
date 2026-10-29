@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c581a7944665281499332863d4d96910, type: 3}
+  m_Name: 4 - 5
+  m_EditorClassIdentifier: Assembly-CSharp::LevelData
+  tier: 4
+  levelPackages:
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
+  - {fileID: 11400000, guid: 85b763b1803b4c94d8c2c86f45149ca2, type: 2}
+  - {fileID: 11400000, guid: dc662fd43fcb3b84587e2f1694f73a55, type: 2}
+  - {fileID: 11400000, guid: dc662fd43fcb3b84587e2f1694f73a55, type: 2}
+  - {fileID: 11400000, guid: 533ba36018c669445bf16ffdb94e6a8a, type: 2}
+  maxWinDeviation: 0
+  levelCharacter: {fileID: 11400000, guid: 81890e95f816f2a4799ffc163e726072, type: 2}
