@@ -17,12 +17,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int currentTier = 1;
     [SerializeField] private List<float> startTimePerTier = new List<float>();
     [SerializeField] private List<float> levelTimeDeductionPerTier = new List<float>();
+    [SerializeField] private int startingMoney = 50;
     private float totalMoney;
     public float TotalMoney => totalMoney;
     private LevelData currentLevelData;
     private List<LevelData> availableLevels = new List<LevelData>();
     private List<PackageData> levelPackages;
-    private int highestTier;
+    public int highestTier;
     private int levelsPlayedOfTier;
     private OrderEntry activeOrderEntry;
     private static GameManager instance;
@@ -61,6 +62,8 @@ public class GameManager : MonoBehaviour
         }
         totalMoney = 0;
         countdownTimer.finishedAction += TryFinishLevel;
+        totalMoney = startingMoney;
+        uIManager.UpdateMoney(totalMoney);
     }
 
     private void SetUpLevel()
@@ -98,6 +101,7 @@ public class GameManager : MonoBehaviour
     private void FinishLevel()
     {
         totalMoney += scoreManager.CalculateMoneyLevel(puzzleManager.GetPackagesOnGrid(), puzzleManager.BalanceManager, countdownTimer, puzzleManager.Grid);
+        uIManager.UpdateMoney(totalMoney);
         Debug.Log("Money: " + totalMoney);
         if (totalMoney <= 0)
         {

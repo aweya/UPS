@@ -17,7 +17,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateMoney(float amount)
     {
-        moneyText.text = amount.ToString();
+        int displayAmount = Mathf.FloorToInt(amount);
+        moneyText.text = "" + displayAmount.ToString() + "$";
     }
 
     public void SetNewCharacter(CharacterData data)

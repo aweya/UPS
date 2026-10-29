@@ -8,6 +8,10 @@ public class CharacterManager : MonoBehaviour
 
     public void SetNewCharacter(CharacterData data)
     {
+        if (characterObject != null)
+        {
+            Destroy(characterObject);
+        }
         currentCharacter = data;
         characterObject = Instantiate(data.visuals, Vector3.zero, Quaternion.identity, this.transform);
         characterObject.transform.localPosition = Vector3.zero;

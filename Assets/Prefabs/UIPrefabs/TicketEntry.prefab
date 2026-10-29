@@ -178,8 +178,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 114.6987, y: -88.36721}
-  m_SizeDelta: {x: 147.1827, y: 146.7327}
+  m_AnchoredPosition: {x: 110.99, y: -84.405}
+  m_SizeDelta: {x: 167.7072, y: 167.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2293872642400002632
 CanvasRenderer:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5943396, g: 0.45696867, b: 0.45696867, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -401,12 +401,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bike
+  m_text: 'Big Big Guy Hellooooo
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8810b620888cb47d38677629283e45dc, type: 2}
-  m_sharedMaterial: {fileID: -3191368071843317298, guid: 8810b620888cb47d38677629283e45dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f30990215ede1452ba18ca1eb77abc07, type: 2}
+  m_sharedMaterial: {fileID: -3170189479991662584, guid: f30990215ede1452ba18ca1eb77abc07, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -430,8 +430,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
