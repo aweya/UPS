@@ -4105,7 +4105,6 @@ MonoBehaviour:
   gameScreen: {fileID: 1039809947}
   tutorialScreen: {fileID: 1960514741}
   Stamp: {fileID: 0}
-  currentMoney: 100
 --- !u!114 &1461270815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4118,10 +4117,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0177e8e60b4aa7a19c2e56eac1be9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CountdownTimer
-  totalTime: 120
-  timeRemaining: 120
+  startTime: 120
   timerText: {fileID: 404051186}
-  timerRun: 1
+  timerFinished: 0
+  runTimer: 1
 --- !u!114 &1461270816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4141,6 +4140,16 @@ MonoBehaviour:
   countdownTimer: {fileID: 1461270815}
   levelsPerTier: 3
   currentTier: 1
+  startTimePerTier:
+  - 60
+  - 60
+  - 60
+  - 60
+  levelTimeDeductionPerTier:
+  - 10
+  - 10
+  - 10
+  - 10
 --- !u!4 &1461270817
 Transform:
   m_ObjectHideFlags: 0
@@ -4169,6 +4178,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   balanceCrashTreshhold: 3.5
+  moneyGainEvent:
+    Guid:
+      Data1: -1433446925
+      Data2: 1159600671
+      Data3: -1108316258
+      Data4: 1857825936
+    Path: event:/Game/G_MoneySpent
+  moneyLossEvent:
+    Guid:
+      Data1: -1433446925
+      Data2: 1159600671
+      Data3: -1108316258
+      Data4: 1857825936
+    Path: event:/Game/G_MoneySpent
   timeGracePercent: 0.5
   smuggleBusse: 100
 --- !u!1 &1469041930
@@ -6019,6 +6042,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HandleCamera
   rotationAmount: 90
   rotationDuration: 1
+  rotateSound:
+    Guid:
+      Data1: -1538183052
+      Data2: 1079527973
+      Data3: -1522183268
+      Data4: -440630349
+    Path: event:/Game/G_PlatformRotate
 --- !u!114 &2077731729
 MonoBehaviour:
   m_ObjectHideFlags: 0

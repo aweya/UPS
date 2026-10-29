@@ -1,46 +1,65 @@
+using System;
 using System.Threading;
 using TMPro;
 using UnityEngine;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public float totalTime = 120f;
-    public float timeRemaining = 60f;
+    public float startTime = 120f;
     public TextMeshProUGUI timerText;
-    private bool timerFinished = false;
-    public bool timerRun = true;
+    private float timeRemaining;
+    public float TimeRemaining => timeRemaining;
+    public bool timerFinished = false;
+    public bool runTimer = true;
+    public Action finishedAction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timeRemaining = totalTime;
+        timeRemaining = startTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timeRemaining > 0 && timerRun)
+        Countdown();
+    }
+
+    private void Countdown()
+    {
+        if (timeRemaining > 0 && runTimer)
         {
             timeRemaining -= Time.deltaTime;
         }
-        else if (timerRun)
+        else if (runTimer)
         {
             timeRemaining = 0;
             if (!timerFinished)
             {
                 timerFinished = true;
+                runTimer = false;
                 TimerFinished();
             }
 
         }
-
         int minutes = Mathf.FloorToInt(timeRemaining / 60);
         int seconds = Mathf.FloorToInt(timeRemaining % 60);
 
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void TimerFinished()
+    public void ResetTimer(float newStartTime)
     {
-        Debug.Log("timerFinished");
+        startTime = newStartTime;
+        timeRemaining = startTime;
+        timerFinished = false;
+        runTimer = true;
+    }
+
+    public void TimerFinished()
+    {
+        if (finishedAction != null)
+        {
+            finishedAction();
+        }
     }
 }

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class OrderEntry : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class OrderEntry : MonoBehaviour
         {
             GameManager.Instance.SpawnPackage(data, this);
             Debug.Log("Ticket clicked!");
+            RuntimeManager.PlayOneShot(data.spawnSound);
             packageSpawned = true;
         }
     }

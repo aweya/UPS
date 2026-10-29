@@ -1,15 +1,17 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using FMODUnity;
 
 public class HandleCamera : MonoBehaviour
 {
     [SerializeField] private float rotationAmount;
     [SerializeField] private float rotationDuration;
+    [SerializeField] private EventReference rotateSound;
     private bool rotating = false;
     private IEnumerator RotateCamera(Vector3 angle)
     {
+        //RuntimeManager.PlayOneShot(rotateSound);
         rotating = true;
         Quaternion startRotation = transform.rotation;
         Quaternion endRotation = Quaternion.Euler(transform.eulerAngles + angle);

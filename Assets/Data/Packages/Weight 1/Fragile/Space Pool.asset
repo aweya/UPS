@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
   m_Name: Space Pool
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -8883513406072362637, guid: b5f1b988ce62c014c9bd4a8fdde459ef, type: 3}
+  gridPackage: {fileID: -8883513406072362637, guid: 97f1b64a142ae63428433614483b5ff8, type: 3}
   weight: 1
   value: 0
-  isStackable: 1
+  isStackable: 0
   spawnSound:
     Guid:
       Data1: 1143111393

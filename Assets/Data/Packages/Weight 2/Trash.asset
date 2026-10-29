@@ -12,10 +12,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
   m_Name: Trash
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -6360507600894162542, guid: f0a5f8faa754ca24eaad808b6c7b3d8c, type: 3}
+  gridPackage: {fileID: -6360507600894162542, guid: dd92ce2bc583a0143a92a53c424765b3, type: 3}
   weight: 2
   value: 0
   isStackable: 1
+  spawnSound:
+    Guid:
+      Data1: 1143111393
+      Data2: 1097876888
+      Data3: 866537619
+      Data4: 225239739
+    Path: event:/Game/G_PickupPackage
+  gridSound:
+    Guid:
+      Data1: 1772142866
+      Data2: 1106660308
+      Data3: 549883579
+      Data4: 1852657952
+    Path: event:/Game/G_SnapPackage
+  placeSound:
+    Guid:
+      Data1: 1902384305
+      Data2: 1265300110
+      Data3: -487096166
+      Data4: 1984563805
+    Path: event:/Game/G_TrashCube
   icons:
   - {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   packageName: 1x1 Horizontal

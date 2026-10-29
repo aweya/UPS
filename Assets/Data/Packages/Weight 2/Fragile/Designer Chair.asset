@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
   m_Name: Designer Chair
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: 5659398134549853064, guid: bc1e0d26dd7b2ff479eece724b1ee6ff, type: 3}
+  gridPackage: {fileID: 5659398134549853064, guid: 4fbd09b048475f843b736df71a6994db, type: 3}
   weight: 1
   value: 0
   isStackable: 0

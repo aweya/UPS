@@ -12,36 +12,26 @@ public class UIManager : MonoBehaviour
     public GameObject gameScreen;
     public GameObject tutorialScreen;
     public Button Stamp;
-
-    public int currentMoney;
-
     private bool firstGameStart = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public void UpdateMoney(float amount)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        moneyText.text = currentMoney.ToString();
+        moneyText.text = amount.ToString();
     }
 
     public void EnterPauseMenu()
     {
         Debug.Log("pause menu on!");
         pauseScreen.SetActive(true);
-        countdownTimer.timerRun = false;
-        Debug.Log(countdownTimer.timerRun);
-        Debug.Log(countdownTimer.timeRemaining);
+        countdownTimer.runTimer = false;
+        Debug.Log(countdownTimer.runTimer);
+        Debug.Log(countdownTimer.TimeRemaining);
     }
 
     public void LeavePauseMenu()
     {
         pauseScreen.SetActive(false);
-        countdownTimer.timerRun = true;
+        countdownTimer.runTimer = true;
     }
 
     public void EnterGameScreen()

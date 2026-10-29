@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private float balanceCrashTreshhold = 3.5f;
+    [SerializeField] private EventReference moneyGainEvent;
+    [SerializeField] private EventReference moneyLossEvent;
 
     public float timeGracePercent = 0.2f;
     private float timeGracePeriod;
@@ -13,8 +16,8 @@ public class ScoreManager : MonoBehaviour
 
     public float CalculateMoneyLevel(List<GridPackage> placedPackages, BalanceManager balanceManager, CountdownTimer countdownTimer, PuzzleGrid grid)
     {
-        float timer = countdownTimer.timeRemaining;
-        float totalTimer = countdownTimer.totalTime;
+        float timer = countdownTimer.TimeRemaining;
+        float totalTimer = countdownTimer.startTime;
         float totalBalance = balanceManager.totalBalance;
         //score per level
         // all packages added * balance * time left
@@ -59,6 +62,16 @@ public class ScoreManager : MonoBehaviour
         if (smuggle = true)
             finalCash -= smuggleBusse;
         */
+
+        if (finalCash > 0)
+        {
+            RuntimeManager.PlayOneShot(moneyGainEvent);
+        }
+        else if (finalCash < 0)
+        {
+            RuntimeManager.PlayOneShot(moneyLossEvent);
+        }
+
         return finalCash;
     }
 

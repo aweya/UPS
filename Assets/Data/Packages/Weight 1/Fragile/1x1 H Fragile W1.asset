@@ -15,7 +15,7 @@ MonoBehaviour:
   gridPackage: {fileID: -6360507600894162542, guid: 98f91826956aceb41b34a0b0fb01fce7, type: 3}
   weight: 1
   value: 0
-  isStackable: 1
+  isStackable: 0
   spawnSound:
     Guid:
       Data1: 1143111393

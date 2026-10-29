@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] private PuzzleManager puzzleManager;
     [SerializeField] private TicketManager ticketManager;
     [SerializeField] private LevelDatabase levelDatabase;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private CountdownTimer countdownTimer;
+
+    [Header("Progression")]
     [SerializeField] private int levelsPerTier;
     [SerializeField] private int currentTier = 1;
+    [SerializeField] private List<float> startTimePerTier = new List<float>();
+    [SerializeField] private List<float> levelTimeDeductionPerTier = new List<float>();
     private float totalMoney;
     public float TotalMoney => totalMoney;
     private LevelData currentLevelData;
@@ -32,13 +37,12 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
+        Initialise();
+    }
 
-        highestTier = levelDatabase.allLevelData.Count;
-        foreach (var l in levelDatabase.GetLevelsOfTier(currentTier))
-        {
-            availableLevels.Add(l);
-        }
-        totalMoney = 0;
+    void OnDisable()
+    {
+        countdownTimer.finishedAction -= TryFinishLevel;
     }
 
     private void Start()
@@ -46,12 +50,25 @@ public class GameManager : MonoBehaviour
         SetUpLevel();
     }
 
+    private void Initialise()
+    {
+        highestTier = levelDatabase.allLevelData.Count;
+        foreach (var l in levelDatabase.GetLevelsOfTier(currentTier))
+        {
+            availableLevels.Add(l);
+        }
+        totalMoney = 0;
+        countdownTimer.finishedAction += TryFinishLevel;
+    }
+
     private void SetUpLevel()
     {
+        float newStartTime = startTimePerTier[currentTier - 1] - (levelTimeDeductionPerTier[currentTier - 1] * levelsPlayedOfTier);
         puzzleManager.ResetPuzzle();
         currentLevelData = GetRandomLevel();
         levelPackages = currentLevelData.levelPackages;
         ticketManager.CreateOrders(levelPackages);
+        countdownTimer.ResetTimer(newStartTime);
     }
 
     private LevelData GetRandomLevel()
@@ -65,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void TryFinishLevel()
     {
-        if (puzzleManager.AmountOfPackagesOnGrid() == levelPackages.Count)
+        if (puzzleManager.AmountOfPackagesOnGrid() == levelPackages.Count || countdownTimer.timerFinished)
         {
             FinishLevel();
         }

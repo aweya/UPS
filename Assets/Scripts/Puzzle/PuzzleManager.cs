@@ -19,7 +19,6 @@ public class PuzzleManager : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        //SelectPackage(packageTypes[currentPackageType]);
     }
 
     void Update()
@@ -37,10 +36,12 @@ public class PuzzleManager : MonoBehaviour
         if (grid.PlacementState(activePackage.PlacementPointCoordinates()) == CellState.EMPTY)
         {
             activePackage.MovePackage(GetGridSnapPosition(activePackage.PlacementPointCoordinates(), 0.1f));
+            //RuntimeManager.PlayOneShot(activePackage.Data.gridSound);
         }
         else if (grid.PlacementState(activePackage.PlacementPointCoordinates()) == CellState.STACKABLE)
         {
             activePackage.MovePackage(GetGridSnapPosition(activePackage.PlacementPointCoordinates(), 1.1f));
+            //RuntimeManager.PlayOneShot(activePackage.Data.gridSound);
         }
     }
 
@@ -105,7 +106,7 @@ public class PuzzleManager : MonoBehaviour
         placedPackage.transform.localRotation = Quaternion.Euler(placedRotation);
         placedPackage.Initialize(activePackage.Data);
 
-        //RuntimeManager.PlayOneShot(activePackage.Data.placeSound);
+        RuntimeManager.PlayOneShot(activePackage.Data.placeSound);
 
         grid.PlacePackage(placedPackage, placedPackage.AllPlacementPoints());
 
