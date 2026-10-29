@@ -24,6 +24,8 @@ public class GridPackage : MonoBehaviour
         weight = data.weight;
         value = data.value;
         stackable = data.isStackable;
+        isSmugglePackage = data.isSmugglePackage;
+        smugglePackageMinimumFacesCovered = data.smugglePackageMinimumFacesCovered;
     }
 
     public List<PlacementPoint> AllPlacementPoints()

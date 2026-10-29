@@ -33,7 +33,6 @@ public class PuzzleGrid : MonoBehaviour
         packagesOnGrid.Add(package);
     }
 
-
     public void RemovePackage(GridPackage package, List<PlacementPoint> placementPoints)
     {
         foreach (var p in placementPoints)
