@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{9f84b120-abba-4807-9510-18050ffdd0f7}">
 		<property name="color">
-			<value>Red Light 1</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>G_PlainPackage</value>
@@ -99,6 +99,7 @@
 			<destination>{3a63e19b-d574-4a3f-a17b-376f66f27f61}</destination>
 			<destination>{35c47221-a81b-4b77-bf81-08e4ca589240}</destination>
 			<destination>{2e0a9c04-bd3e-484d-81ff-176cedc66859}</destination>
+			<destination>{08453a8c-a9d6-4435-b2d4-79b9f645a19e}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f83eee31-6ba8-4dd1-b6ca-90201741d4aa}">
@@ -135,6 +136,11 @@
 	<object class="SingleSound" id="{2e0a9c04-bd3e-484d-81ff-176cedc66859}">
 		<relationship name="audioFile">
 			<destination>{21fa5d30-d6c9-41e3-87da-f299355b7f7e}</destination>
+		</relationship>
+	</object>
+	<object class="SingleSound" id="{08453a8c-a9d6-4435-b2d4-79b9f645a19e}">
+		<relationship name="audioFile">
+			<destination>{f276c98b-dd08-4792-a66a-21b781686b46}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{b7381ae6-77bc-4235-9684-9361c81b2849}">
