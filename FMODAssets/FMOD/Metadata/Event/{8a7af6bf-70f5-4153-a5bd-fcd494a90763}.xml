@@ -5,13 +5,13 @@
 			<value>Yellow</value>
 		</property>
 		<property name="name">
-			<value>EaS_MoneyEarned</value>
+			<value>G_MoneyEarned</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{7b2c321e-c21b-4541-a3d3-500ef6c449c5}</destination>
+			<destination>{cf949654-48b8-459e-956b-7f32d9dfb91c}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{3cff1a29-c8b4-4a28-970f-f15e91c29ce7}</destination>
