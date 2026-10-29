@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{6ca55a82-4b5e-43ea-8ffe-71aa9d60b420}">
 		<property name="color">
-			<value>Red Light 1</value>
+			<value>Yellow</value>
 		</property>
 		<property name="name">
 			<value>EaS_Rocket</value>
@@ -63,7 +63,7 @@
 	<object class="MarkerTrack" id="{41aba4fe-9e33-434d-86fc-d5a82c9926e1}" />
 	<object class="GroupTrack" id="{8e1bfe2f-2da4-4ef5-9d2d-2e76e6f49c34}">
 		<relationship name="modules">
-			<destination>{c15d2e52-80c3-4d83-9de5-fa6800d4502e}</destination>
+			<destination>{83f53e7e-6436-4408-b552-7c6fea9b2e98}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{4607db0a-cec5-4e61-93d5-a5d4cdf1fa63}</destination>
@@ -71,7 +71,7 @@
 	</object>
 	<object class="Timeline" id="{409a8042-6a48-49c2-8686-7d685be22a8a}">
 		<relationship name="modules">
-			<destination>{c15d2e52-80c3-4d83-9de5-fa6800d4502e}</destination>
+			<destination>{83f53e7e-6436-4408-b552-7c6fea9b2e98}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{e62d1947-2c5d-49fe-9acc-33ff8923a6da}">
@@ -91,15 +91,12 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2e7cc634-9858-4c1a-a430-334600ae847f}" />
-	<object class="SingleSound" id="{c15d2e52-80c3-4d83-9de5-fa6800d4502e}">
-		<property name="start">
-			<value>6.3661202185792352</value>
-		</property>
+	<object class="SingleSound" id="{83f53e7e-6436-4408-b552-7c6fea9b2e98}">
 		<property name="length">
-			<value>0.97847916666666668</value>
+			<value>12</value>
 		</property>
 		<relationship name="audioFile">
-			<destination>{944e9bc2-7d68-451a-a8bf-b26d026a1d60}</destination>
+			<destination>{fa9948ef-d083-44b3-894f-62ab417f7ad0}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{4607db0a-cec5-4e61-93d5-a5d4cdf1fa63}">

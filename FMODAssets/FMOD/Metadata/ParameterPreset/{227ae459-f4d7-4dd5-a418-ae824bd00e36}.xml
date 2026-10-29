@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="ParameterPreset" id="{227ae459-f4d7-4dd5-a418-ae824bd00e36}">
+		<property name="name">
+			<value>Alarm</value>
+		</property>
+		<relationship name="folder">
+			<destination>{95850150-7488-4161-843c-baacb26f8794}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{69450cc2-dc07-4607-b145-72fe412cb99d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{69450cc2-dc07-4607-b145-72fe412cb99d}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Normal</value>
+			<value>Low Time</value>
+			<value>Time Over</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
