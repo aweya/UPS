@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VectorGraphics;
 using UnityEngine;
 
 public class GridPackage : MonoBehaviour
@@ -15,6 +16,7 @@ public class GridPackage : MonoBehaviour
     public PackageData Data => pData;
 
     private bool isSmugglePackage;
+    public bool IsSmugglePackage => isSmugglePackage;
     private int smugglePackageMinimumFacesCovered;
 
     public void Initialize(PackageData data)
@@ -56,12 +58,15 @@ public class GridPackage : MonoBehaviour
     public void RotatePackage(Vector3 rotateAmount)
     {
         transform.Rotate(rotateAmount);
+        bool a = CheckSmugglePackage();
     }
 
     public bool CheckSmugglePackage()
     {
+        Debug.Log("Checking Package");
         if (isSmugglePackage)
         {
+            GameObject checkObject = new GameObject();
             int facesCovered = 0;
             foreach (var p in AllPlacementPoints())
             {
@@ -76,14 +81,23 @@ public class GridPackage : MonoBehaviour
 
                 foreach (Vector3 dir in directions)
                 {
-                    Vector3 raycastPos = new Vector3(p.transform.localPosition.x, p.transform.localPosition.y + 0.5f, p.transform.localPosition.z);
-                    RaycastHit hit;
-                    if (Physics.Raycast(raycastPos, dir, out hit, 0.6f))
+                    for (int i = 0; i < p.Height; i++)
                     {
-                        facesCovered++;
+                        GameObject o = Instantiate(checkObject, this.transform.parent);
+                        o.transform.localPosition = new Vector3(p.transform.position.x, p.transform.position.y + 0.5f + i, p.transform.position.z);
+                        Vector3 raycastPos = o.transform.position;
+                        RaycastHit hit;
+                        if (Physics.Raycast(raycastPos, dir, out hit, 0.6f))
+                        {
+                            facesCovered++;
+                        }
+
+                        Debug.DrawRay(raycastPos, dir * 0.6f, Color.red, 2f);
+                        Destroy(o);
                     }
                 }
             }
+            Debug.Log("Package checked. Faces Covered: " + facesCovered);
             if (facesCovered >= smugglePackageMinimumFacesCovered)
             {
                 return true;

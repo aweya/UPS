@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
   gridPackage: {fileID: -6360507600894162542, guid: 88565139ce6f5fd4b9f8108bf5800df8, type: 3}
   weight: 2
-  value: 0
+  value: 30
   isStackable: 1
-  isSmugglePackage: 0
-  smugglePackageMinimumFacesCovered: 0
+  isSmugglePackage: 1
+  smugglePackageMinimumFacesCovered: 5
   spawnSound:
     Guid:
       Data1: 1143111393

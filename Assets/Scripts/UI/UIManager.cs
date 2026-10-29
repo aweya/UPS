@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private CountdownTimer countdownTimer;
+    [SerializeField] private CharacterManager characterManager;
     public TextMeshProUGUI moneyText;
     public GameObject pauseScreen;
     public GameObject creditsScreen;
@@ -17,6 +18,11 @@ public class UIManager : MonoBehaviour
     public void UpdateMoney(float amount)
     {
         moneyText.text = amount.ToString();
+    }
+
+    public void SetNewCharacter(CharacterData data)
+    {
+        characterManager.SetNewCharacter(data);
     }
 
     public void EnterPauseMenu()

@@ -10,7 +10,9 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - Fluxisch Else
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 3799cd298651f4c21ab07f9aba4cc64d, type: 3}
+  - {fileID: 12800000, guid: 71e310f374e40469b9472bca880aea67, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

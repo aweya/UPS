@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private LevelDatabase levelDatabase;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private CountdownTimer countdownTimer;
+    [SerializeField] private UIManager uIManager;
 
     [Header("Progression")]
     [SerializeField] private int levelsPerTier;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         puzzleManager.ResetPuzzle();
         currentLevelData = GetRandomLevel();
         levelPackages = currentLevelData.levelPackages;
+        uIManager.SetNewCharacter(currentLevelData.levelCharacter);
         ticketManager.CreateOrders(levelPackages);
         countdownTimer.ResetTimer(newStartTime);
     }

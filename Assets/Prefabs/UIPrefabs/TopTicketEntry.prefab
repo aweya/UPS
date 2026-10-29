@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3938656994426536808}
   - component: {fileID: 3877963147398596578}
   - component: {fileID: 8137261283142468910}
-  - component: {fileID: 6036058634865210499}
   - component: {fileID: 6224417333885250732}
   m_Layer: 5
   m_Name: TopTicketEntry
@@ -39,8 +38,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87.0065, y: -45.447}
-  m_SizeDelta: {x: 174.013, y: 90.895}
+  m_AnchoredPosition: {x: 218.33997, y: -114.60864}
+  m_SizeDelta: {x: 436.6846, y: 229.2182}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7854184500770976859
 CanvasRenderer:
@@ -95,8 +94,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 60
-    m_Bottom: 10
+    m_Top: 80
+    m_Bottom: 140
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 0
@@ -119,28 +118,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
   m_IgnoreLayout: 0
-  m_MinWidth: 174
+  m_MinWidth: 522.0141
   m_MinHeight: -1
-  m_PreferredWidth: 174
+  m_PreferredWidth: 522.0141
   m_PreferredHeight: -1
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
---- !u!114 &6036058634865210499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 636565268945101968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de33375563ba7457f8bfa88d7b84aead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  image: {fileID: 0}
-  textField: {fileID: 0}
-  background: {fileID: 30460360196640515}
 --- !u!114 &6224417333885250732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,8 +173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 87, y: -45.447}
-  m_SizeDelta: {x: 174, y: 168}
+  m_AnchoredPosition: {x: 218.18, y: -114.547}
+  m_SizeDelta: {x: 436.37, y: 229.094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5037855337311454086
 CanvasRenderer:
