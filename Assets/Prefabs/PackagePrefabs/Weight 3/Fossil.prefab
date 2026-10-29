@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1216104235754616412}
   - component: {fileID: 8686827415594990243}
   - component: {fileID: 7536905014210420468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4846011025928389137}
   - component: {fileID: -5871317596083696972}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fossil
   m_TagString: Package
   m_Icon: {fileID: 0}
@@ -187,17 +187,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
       propertyPath: m_Name
       value: FossilBoxfbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4128777695624650646, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128777695624650646, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: 9a3230ada6e734d229d2f03ef45a5559, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -261,6 +277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PackageUnit (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -323,6 +343,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PackageUnit (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -384,6 +408,10 @@ PrefabInstance:
     - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
       propertyPath: m_Name
       value: PackageUnit
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930082059804085534, guid: f3d9d76c5d9c3a54586e80c5fff7968e, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
