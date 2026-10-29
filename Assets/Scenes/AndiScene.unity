@@ -4141,15 +4141,15 @@ MonoBehaviour:
   levelsPerTier: 3
   currentTier: 1
   startTimePerTier:
-  - 60
-  - 60
-  - 60
+  - 50
+  - 50
+  - 50
   - 60
   levelTimeDeductionPerTier:
-  - 10
-  - 10
-  - 10
-  - 10
+  - 5
+  - 5
+  - 5
+  - 5
 --- !u!4 &1461270817
 Transform:
   m_ObjectHideFlags: 0

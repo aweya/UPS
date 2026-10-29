@@ -14,6 +14,8 @@ public class GridPackage : MonoBehaviour
     public bool Stackable => stackable;
     public PackageData Data => pData;
 
+    private bool isSmugglePackage;
+
     public void Initialize(PackageData data)
     {
         placementPoints = GetComponentsInChildren<PlacementPoint>().ToList();
@@ -51,5 +53,13 @@ public class GridPackage : MonoBehaviour
     public void RotatePackage(Vector3 rotateAmount)
     {
         transform.Rotate(rotateAmount);
+    }
+
+    public void CheckSmugglePackage()
+    {
+        if (isSmugglePackage)
+        {
+
+        }
     }
 }
