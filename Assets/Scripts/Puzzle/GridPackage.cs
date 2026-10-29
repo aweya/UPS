@@ -15,6 +15,7 @@ public class GridPackage : MonoBehaviour
     public PackageData Data => pData;
 
     private bool isSmugglePackage;
+    public bool IsSmugglePackage => isSmugglePackage;
     private int smugglePackageMinimumFacesCovered;
 
     public void Initialize(PackageData data)
@@ -82,6 +83,8 @@ public class GridPackage : MonoBehaviour
                     {
                         facesCovered++;
                     }
+
+                    Debug.DrawRay(raycastPos, dir * 0.6f, Color.red, 2f);
                 }
             }
             if (facesCovered >= smugglePackageMinimumFacesCovered)

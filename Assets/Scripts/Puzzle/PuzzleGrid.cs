@@ -114,4 +114,16 @@ public class PuzzleGrid : MonoBehaviour
         }
         packagesOnGrid.Clear();
     }
+
+    public GridPackage HasSmugglePackage()
+    {
+        foreach (var p in packagesOnGrid)
+        {
+            if (p.IsSmugglePackage)
+            {
+                return p;
+            }
+        }
+        return null;
+    }
 }
