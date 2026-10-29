@@ -51,7 +51,7 @@ public class ScoreManager : MonoBehaviour
         // calc timerating
         // Full time rating during the grace period, then decrease to 0.
         timeGracePeriod = totalTimer * timeGracePercent;
-        float timeRating = Mathf.Clamp01(timer / (totalTimer - timeGracePeriod));
+        float timeRating = Mathf.Lerp(0.2f, 1f, Mathf.Clamp01(timer / (totalTimer - timeGracePeriod)));
 
         // calc total cash
         float finalCash = moneySumLevel * balanceRating * timeRating;
