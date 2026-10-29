@@ -18,6 +18,6 @@ public class PackageData : ScriptableObject
     [Header("UI Values")]
     public Sprite[] icons;
     public string packageName;
-    public Image background;
+    public Sprite background;
 
 }

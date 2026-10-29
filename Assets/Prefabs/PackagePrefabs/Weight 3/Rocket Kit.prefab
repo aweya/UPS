@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 5659398134549853064}
   m_Layer: 0
   m_Name: Rocket Kit
-  m_TagString: Untagged
+  m_TagString: Package
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,16 +214,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: UPS_Asset_RocketKit_3x2T_H
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
+      propertyPath: m_TagString
+      value: Package
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 752083628012737791}
   m_SourcePrefab: {fileID: 100100000, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
 --- !u!4 &386058155148133187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
   m_PrefabInstance: {fileID: 203001344678831272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1013412670475278841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
+  m_PrefabInstance: {fileID: 203001344678831272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &752083628012737791
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013412670475278841}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8658244780386539397, guid: 08f0bd03c319343c28088413bd2a3c0f, type: 3}
 --- !u!1001 &243362524523875176
 PrefabInstance:
   m_ObjectHideFlags: 0
