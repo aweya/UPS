@@ -12,7 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c581a7944665281499332863d4d96910, type: 3}
   m_Name: 5 - 1
   m_EditorClassIdentifier: Assembly-CSharp::LevelData
-  tier: 0
-  levelPackages: []
+  tier: 5
+  levelPackages:
+  - {fileID: 11400000, guid: a976b90c3547a414780e737a60f711de, type: 2}
+  - {fileID: 11400000, guid: 57df19e1570ef164ca42c78f8843ba60, type: 2}
+  - {fileID: 11400000, guid: 43ef1800c7021a24aa4f3cbe4fd9151c, type: 2}
+  - {fileID: 11400000, guid: b71f8de3c3332714da296c4e65b51800, type: 2}
+  - {fileID: 11400000, guid: dc662fd43fcb3b84587e2f1694f73a55, type: 2}
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
+  - {fileID: 11400000, guid: 54a1c7cebae418a44b97e3cf93aac41f, type: 2}
   maxWinDeviation: 0
   levelCharacter: {fileID: 0}
