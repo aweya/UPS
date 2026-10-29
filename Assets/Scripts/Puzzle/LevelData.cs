@@ -8,4 +8,5 @@ public class LevelData : ScriptableObject
     public int tier;
     public List<PackageData> levelPackages;
     public float maxWinDeviation;
+    public CharacterData levelCharacter;
 }

@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045c719a63eb71f48b1e4a4281f861ae, type: 3}
   m_Name: 2x1 Vertical
   m_EditorClassIdentifier: Assembly-CSharp::PackageData
-  gridPackage: {fileID: -6360507600894162542, guid: e05288ea5d19d384a92643ca3fb2ea65, type: 3}
+  gridPackage: {fileID: -6360507600894162542, guid: 98127bb4e91aee240a0639ed2b5b3126, type: 3}
   weight: 1
   value: 5
   isStackable: 0
+  isSmugglePackage: 0
+  smugglePackageMinimumFacesCovered: 0
   spawnSound:
     Guid:
       Data1: 1143111393

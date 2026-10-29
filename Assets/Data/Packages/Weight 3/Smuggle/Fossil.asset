@@ -16,8 +16,8 @@ MonoBehaviour:
   weight: 2
   value: 0
   isStackable: 1
-  isSmugglePackage: 0
-  smugglePackageMinimumFacesCovered: 0
+  isSmugglePackage: 1
+  smugglePackageMinimumFacesCovered: 6
   spawnSound:
     Guid:
       Data1: 1143111393

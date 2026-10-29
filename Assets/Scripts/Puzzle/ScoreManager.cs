@@ -64,6 +64,7 @@ public class ScoreManager : MonoBehaviour
         */
         if (grid.HasSmugglePackage() != null)
         {
+            Debug.Log("Smuggle!!!");
             if (!grid.HasSmugglePackage().CheckSmugglePackage())
             {
                 finalCash -= smugglePenalty;

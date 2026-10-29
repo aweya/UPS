@@ -66,18 +66,6 @@ public class PuzzleManager : MonoBehaviour
         activePackage.Initialize(data);
     }
 
-    public GridPackage HasSmugglePackage()
-    {
-        foreach (var p in grid.PackagesOnGrid)
-        {
-            if (p.IsSmugglePackage)
-            {
-                return p;
-            }
-        }
-        return null;
-    }
-
     public bool HasActivePackage()
     {
         return activePackage != null;
