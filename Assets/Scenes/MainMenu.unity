@@ -504,7 +504,7 @@ MonoBehaviour:
       Data4: -2140228345
     Path: event:/Music/Music
   Event: 
-  EventPlayTrigger: 1
+  EventPlayTrigger: 0
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0

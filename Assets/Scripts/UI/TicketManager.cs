@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor.Animations;
-using Mono.Cecil.Cil;
+//using UnityEditor.Animations;
+//using Mono.Cecil.Cil;
 
 public class TicketManager : MonoBehaviour
 {

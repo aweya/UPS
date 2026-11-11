@@ -75,7 +75,7 @@
 	</object>
 	<object class="GroupTrack" id="{134b69b5-b104-4f43-acc6-f9251e4a56c0}">
 		<relationship name="automationTracks">
-			<destination>{955fb740-db47-4911-9fb3-3035a5ca9310}</destination>
+			<destination>{1dc0c4d8-f5cf-4671-8eb4-42c9eaa36215}</destination>
 		</relationship>
 		<relationship name="modules">
 			<destination>{a2683589-f233-4c0d-afe9-1e5df32b6987}</destination>
@@ -137,7 +137,7 @@
 			<destination>{87dc16c1-e366-447a-ba27-2ca46a8307fb}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{955fb740-db47-4911-9fb3-3035a5ca9310}">
+	<object class="AutomationTrack" id="{1dc0c4d8-f5cf-4671-8eb4-42c9eaa36215}">
 		<relationship name="automator">
 			<destination>{5eb97167-6cb4-48ca-b483-61aa89ce5d55}</destination>
 		</relationship>
@@ -158,7 +158,8 @@
 			<destination>{5eb97167-6cb4-48ca-b483-61aa89ce5d55}</destination>
 		</relationship>
 		<relationship name="modulators">
-			<destination>{f1bfdf11-835c-422b-9003-98c71791c022}</destination>
+			<destination>{5ec98896-48f4-45a4-bb30-be7c2653ba3a}</destination>
+			<destination>{53274c67-aae6-420f-b5d6-bd3003d2ccca}</destination>
 		</relationship>
 		<relationship name="effectChain">
 			<destination>{589be3b1-ef7b-4d6e-88ee-48a36b6c2a6d}</destination>
@@ -205,7 +206,7 @@
 			<destination>{9a431b80-6907-4457-a8cd-7b8f96d713d1}</destination>
 		</relationship>
 	</object>
-	<object class="ADSRModulator" id="{f1bfdf11-835c-422b-9003-98c71791c022}">
+	<object class="ADSRModulator" id="{5ec98896-48f4-45a4-bb30-be7c2653ba3a}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
@@ -213,13 +214,18 @@
 			<value>-80</value>
 		</property>
 		<property name="attackTime">
-			<value>2211.53882</value>
-		</property>
-		<property name="peakValue">
-			<value>-0.577776909</value>
+			<value>8269.22949</value>
 		</property>
 		<property name="finalValue">
 			<value>-80</value>
+		</property>
+	</object>
+	<object class="SeekModulator" id="{53274c67-aae6-420f-b5d6-bd3003d2ccca}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="speedAscending">
+			<value>0.5899999737739563</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{589be3b1-ef7b-4d6e-88ee-48a36b6c2a6d}">

@@ -4399,6 +4399,7 @@ GameObject:
   - component: {fileID: 1410121903}
   - component: {fileID: 1410121902}
   - component: {fileID: 1410121904}
+  - component: {fileID: 1410121905}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -4427,7 +4428,7 @@ MonoBehaviour:
       Data4: -2140228345
     Path: event:/Music/Music
   Event: 
-  EventPlayTrigger: 1
+  EventPlayTrigger: 0
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4473,7 +4474,7 @@ MonoBehaviour:
       Data4: -147606005
     Path: event:/Game/G_Ambiance
   Event: 
-  EventPlayTrigger: 1
+  EventPlayTrigger: 0
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -4483,6 +4484,18 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &1410121905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410121901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d024f241ccd345b46b1ad93181f86d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
 --- !u!1 &1461270813
 GameObject:
   m_ObjectHideFlags: 0
@@ -4538,6 +4551,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CountdownTimer
   startTime: 120
   timerText: {fileID: 688179857}
+  intesityThreshold: 0.5
+  musicEmitter: {fileID: 1410121902}
   timerFinished: 0
   runTimer: 1
 --- !u!114 &1461270816
@@ -4561,7 +4576,7 @@ MonoBehaviour:
   levelsPerTier: 3
   currentTier: 1
   startTimePerTier:
-  - 50
+  - 40
   - 50
   - 50
   - 60
@@ -4569,10 +4584,10 @@ MonoBehaviour:
   levelTimeDeductionPerTier:
   - 5
   - 5
-  - 5
-  - 5
-  - 5
-  startingMoney: 50
+  - 3
+  - 3
+  - 3
+  startingMoney: 100
   highestTier: 0
 --- !u!4 &1461270817
 Transform:
