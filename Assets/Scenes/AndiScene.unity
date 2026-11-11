@@ -4582,11 +4582,11 @@ MonoBehaviour:
   - 60
   - 60
   levelTimeDeductionPerTier:
+  - 6
   - 5
-  - 5
   - 3
-  - 3
-  - 3
+  - 2
+  - 2
   startingMoney: 100
   highestTier: 0
 --- !u!4 &1461270817
